@@ -13,5 +13,7 @@ http://e-voting.bfh.ch/app/download/5999765861/vonbergen14.pdf?t=1392211737
 
 This repository contains the source code of MobiVote as well as an APK (Android executable).
 The code source in this repository depends on following additional repositories:
+https://github.com/vgp2/AllJoynLib
+https://github.com/vgp2/ZXing
 
 For licensing, see LICENSE.txt
