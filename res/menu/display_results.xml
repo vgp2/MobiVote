@@ -1,0 +1,24 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <item
+        android:id="@+id/help"
+        android:icon="@drawable/ic_action_help"
+        android:showAsAction="always"
+        android:title="@string/help">
+    </item>
+    
+    <item
+        android:id="@+id/action_redo_vote"
+        android:icon="@drawable/ic_action_undo"
+        android:showAsAction="always|withText"
+        android:title="@string/action_redo_poll">
+    </item>
+    
+    <item
+        android:id="@+id/action_export"
+        android:icon="@drawable/ic_action_download"
+        android:showAsAction="always|withText"
+        android:title="@string/action_export">
+    </item>
+
+</menu>

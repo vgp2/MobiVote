@@ -1,0 +1,49 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <fragment
+        android:id="@+id/fragment_network_information"
+        android:layout_width="match_parent"
+        android:layout_height="0dip"
+        android:layout_margin="@dimen/margin"
+        android:layout_weight="1"
+        class="ch.bfh.evoting.voterapp.hkrs12.fragment.NetworkInformationFragment" >
+    </fragment>
+
+    <LinearLayout
+        android:id="@+id/layout_bottom_bar"
+        style="@style/ActionBar.Solid.Votebartheme"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:divider="?android:dividerVertical"
+        android:dividerPadding="8dp"
+        android:orientation="horizontal"
+        android:showDividers="middle" >
+
+        <Button
+            android:id="@+id/button_recreate_network"
+            style="@style/BottomBar"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.18"
+            android:drawableLeft="@drawable/ic_action_edit"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"
+            android:text="@string/recreate_network" />
+
+        <Button
+            android:id="@+id/button_next"
+            style="@style/BottomBar"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.18"
+            android:drawableRight="@drawable/ic_action_next_item"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"
+            android:text="@string/action_next" />
+    </LinearLayout>
+
+</LinearLayout>

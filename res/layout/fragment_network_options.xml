@@ -1,0 +1,46 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <LinearLayout
+        android:id="@+id/layout_network_options"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="vertical" >
+
+        <Button
+            android:id="@+id/button_capture_qrcode"
+            style="@style/MainButtons"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="80dip"
+            android:text="@string/capture_qrcode" />
+
+        <Button
+            android:id="@+id/button_scan_nfc"
+            style="@style/MainButtons"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="80dip"
+            android:text="@string/button_scan_nfc" />
+        
+        <Button
+            android:id="@+id/button_use_actual_ssid"
+            style="@style/MainButtons"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="80dip"
+            android:text="@string/button_use_actual_ssid" />
+
+        <Button
+            android:id="@+id/button_advanced_network_config"
+            style="@style/MainButtons"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="80dip"
+            android:text="@string/advance_network_config" />
+    </LinearLayout>
+
+</ScrollView>

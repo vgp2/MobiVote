@@ -1,0 +1,117 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/textview_network_name_desc"
+        style="?android:attr/listSeparatorTextViewStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/network_name" >
+    </TextView>
+
+    <TextView
+        android:id="@+id/textview_network_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textSize="20sp"
+        android:textStyle="" >
+    </TextView>
+
+    <LinearLayout
+        android:id="@+id/view_wlan_key"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/textview_network_key_desc"
+            style="?android:attr/listSeparatorTextViewStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/network_wlan_key" >
+        </TextView>
+
+        <TextView
+            android:id="@+id/textview_network_key"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textSize="20sp"
+            android:textStyle="" >
+        </TextView>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/textview_group_name_desc"
+        style="?android:attr/listSeparatorTextViewStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="@string/group_name_desc" >
+    </TextView>
+
+    <TextView
+        android:id="@+id/textview_group_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textSize="20sp"
+        android:textStyle="" >
+    </TextView>
+
+    <TextView
+        android:id="@+id/textview_group_password_desc"
+        style="?android:attr/listSeparatorTextViewStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="@string/group_password_desc" >
+    </TextView>
+
+    <TextView
+        android:id="@+id/textview_group_password"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textSize="20sp"
+        android:textStyle="" >
+    </TextView>
+
+    <ImageView
+        android:id="@+id/imageview_qrcode"
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:contentDescription="@string/description_qrcode" />
+
+    <Button
+        android:id="@+id/button_write_nfc_tag"
+        style="@style/MainButtons"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="40dip"
+        android:text="@string/write_nfc_tag" />
+
+    <TextView
+        android:id="@+id/textview_identification_desc"
+        style="?android:attr/listSeparatorTextViewStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="@string/identification" >
+    </TextView>
+
+    <TextView
+        android:id="@+id/textview_identification"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textSize="20sp"
+        android:textStyle="" >
+    </TextView>
+
+</LinearLayout>

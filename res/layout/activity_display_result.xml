@@ -1,0 +1,54 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginLeft="@dimen/activity_horizontal_margin"
+    android:layout_marginRight="@dimen/activity_horizontal_margin"
+    android:orientation="vertical" >
+
+    <ListView
+        android:id="@android:id/list"
+        android:layout_width="match_parent"
+        android:layout_height="0dip"
+        android:layout_weight="1"
+        android:clickable="false"
+        android:divider="@android:color/transparent"
+        android:gravity="center_vertical" >
+    </ListView>
+
+    <LinearLayout
+        android:id="@+id/layout_bottom_bar"
+        style="@style/ActionBar.Solid.Votebartheme"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:divider="?android:dividerVertical"
+        android:dividerPadding="8dp"
+        android:orientation="horizontal"
+        android:showDividers="middle" >
+
+        <Button
+            android:id="@+id/button_redo_poll"
+            style="@style/BottomBar"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.18"
+            android:drawableLeft="@drawable/ic_action_undo"
+            android:singleLine="true"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"
+            android:text="@string/action_redo_poll" />
+        
+        <Button
+            android:id="@+id/button_export"
+            style="@style/BottomBar"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.18"
+            android:drawableLeft="@drawable/ic_action_download"
+            android:singleLine="true"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"
+            android:text="@string/action_export" />
+    </LinearLayout>
+
+</LinearLayout>

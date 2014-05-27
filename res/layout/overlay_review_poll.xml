@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_overlay"
+    android:orientation="vertical" >
+
+    <ImageView
+        android:id="@+id/imageView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/overlay_margin_side"
+        android:layout_marginTop="30dp"
+        android:contentDescription="@string/help"
+        android:src="@drawable/arrow_down_right" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_below="@id/imageView1"
+        android:layout_marginRight="@dimen/overlay_margin_side"
+        android:layout_marginTop="90dp"
+        android:contentDescription="@string/help"
+        android:src="@drawable/arrow_down_left" />
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@id/imageView1"
+        android:layout_marginRight="@dimen/margin"
+        android:layout_marginTop="24dp"
+        android:layout_toRightOf="@id/imageView1"
+        android:text="@string/overlay_review"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="@android:color/white" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@id/imageView2"
+        android:layout_marginLeft="@dimen/margin"
+        android:layout_marginTop="24dp"
+        android:layout_toLeftOf="@id/imageView2"
+        android:text="@string/overlay_review_ok"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="@android:color/white" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="24dp"
+        android:gravity="center_vertical|center_horizontal"
+        android:text="@string/overlay_close"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="@android:color/white" />
+
+</RelativeLayout>

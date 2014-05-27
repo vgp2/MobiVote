@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="ch.bfh.evoting.voterapp.hkrs12"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="14"
+        android:targetSdkVersion="18" />
+
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_MULTICAST_STATE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.NFC" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    
+    <!-- Read owner name permissions
+    <uses-permission android:name="android.permission.READ_PROFILE" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" /> -->
+
+    <application
+        android:name="ch.bfh.evoting.voterapp.hkrs12.AndroidApplication"
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/voter_app_app_name"
+        android:theme="@style/Theme.Votebartheme" >
+
+        <!-- TODO remove when no more needed -->
+        <service android:name="ch.bfh.evoting.voterapp.hkrs12.protocol.VoteService" />
+         <service android:name="ch.bfh.evoting.voterapp.hkrs12.protocol.hkrs12.statemachine.ProcessingService" />
+
+        <activity
+            android:name="ch.bfh.evoting.voterapp.hkrs12.MainActivity"
+            android:label="@string/voter_app_app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.nfc.action.NDEF_DISCOVERED" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+
+                <data android:mimeType="application/ch.bfh.evoting.voterapp" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="ch.bfh.evoting.voterapp.hkrs12.PollActivity"
+            android:label="@string/title_activity_poll"
+            android:parentActivityName="ch.bfh.evoting.voterapp.hkrs12.MainActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="ch.bfh.evoting.voterapp.hkrs12.MainActivity" />
+        </activity>
+        <activity
+            android:name="ch.bfh.evoting.voterapp.hkrs12.PollDetailActivity"
+            android:label="@string/title_activity_poll_detail"
+            android:launchMode="singleTop"
+            android:parentActivityName="ch.bfh.evoting.voterapp.hkrs12.PollActivity"
+            android:windowSoftInputMode="stateHidden|adjustResize" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="ch.bfh.evoting.voterapp.hkrs12.PollActivity" />
+        </activity>
+        <activity
+            android:name="ch.bfh.evoting.voterapp.hkrs12.NetworkConfigActivity"
+            android:label="@string/title_activity_network_config"
+            android:parentActivityName="ch.bfh.evoting.voterapp.hkrs12.PollDetailActivity"
+            android:windowSoftInputMode="stateHidden" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="ch.bfh.evoting.voterapp.hkrs12.PollDetailActivity" />
+        </activity>
+        <activity
+            android:name="ch.bfh.evoting.voterapp.hkrs12.NetworkInformationActivity"
+            android:label="@string/title_activity_network_informations"
+            android:parentActivityName="ch.bfh.evoting.voterapp.hkrs12.PollDetailActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="ch.bfh.evoting.voterapp.hkrs12.PollDetailActivity" />
+        </activity>
+        <activity
+            android:name="ch.bfh.evoting.voterapp.hkrs12.ElectorateActivity"
+            android:label="@string/title_activity_electorate"
+            android:parentActivityName="ch.bfh.evoting.voterapp.hkrs12.NetworkInformationActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="ch.bfh.evoting.voterapp.hkrs12.PollDetailActivity" />
+        </activity>
+        <activity
+            android:name="ch.bfh.evoting.voterapp.hkrs12.ReviewPollAdminActivity"
+            android:label="@string/title_activity_review_poll"
+            android:parentActivityName="ch.bfh.evoting.voterapp.hkrs12.NetworkInformationActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="ch.bfh.evoting.voterapp.hkrs12.ElectorateActivity" />
+        </activity>
+        <activity
+            android:name="ch.bfh.evoting.voterapp.hkrs12.WaitForVotesAdminActivity"
+            android:label="@string/title_activity_wait_for_votes_admin" >
+        </activity>
+        <activity
+            android:name="ch.bfh.evoting.voterapp.hkrs12.ListTerminatedPollsActivity"
+            android:label="@string/title_activity_list_terminated_polls" >
+        </activity>
+        <activity
+            android:name="ch.bfh.evoting.voterapp.hkrs12.DisplayResultActivity"
+            android:label="@string/title_activity_display_result" >
+        </activity>
+        <activity
+            android:name="ch.bfh.evoting.voterapp.hkrs12.CheckElectorateActivity"
+            android:label="@string/title_activity_check_electorate"
+            android:parentActivityName="ch.bfh.evoting.voterapp.hkrs12.MainActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="ch.bfh.evoting.voterapp.hkrs12.MainActivity" />
+        </activity>
+        <activity
+            android:name="ch.bfh.evoting.voterapp.hkrs12.ReviewPollVoterActivity"
+            android:label="@string/title_activity_review_poll" >
+        </activity>
+        <activity
+            android:name="ch.bfh.evoting.voterapp.hkrs12.VoteActivity"
+            android:label="@string/title_activity_vote" >
+        </activity>
+        <activity
+            android:name="ch.bfh.evoting.voterapp.hkrs12.WaitForVotesVoterActivity"
+            android:label="@string/title_activity_wait_for_votes" >
+        </activity>
+        <!-- android:noHistory="true" > -->
+        <activity
+            android:name="ch.bfh.evoting.voterapp.hkrs12.CreateNetworkActivity"
+            android:label="@string/title_activity_create_network"
+            android:parentActivityName="ch.bfh.evoting.voterapp.hkrs12.NetworkConfigActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="ch.bfh.evoting.voterapp.hkrs12.NetworkConfigActivity" />
+        </activity>
+        <activity
+            android:name="com.google.zxing.client.android.CaptureActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:screenOrientation="landscape"
+            android:theme="@android:style/Theme.NoTitleBar.Fullscreen"
+            android:windowSoftInputMode="stateAlwaysHidden" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.google.zxing.client.android.SCAN" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.google.zxing.client.android.HelpActivity"
+            android:screenOrientation="user" >
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

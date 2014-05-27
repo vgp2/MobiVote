@@ -1,0 +1,27 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/title"
+        style="@style/DialogTitleStyle"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/dialog_title_margin"
+        android:text="@string/dialog_title_result_chart" >
+    </TextView>
+
+    <View
+        android:id="@+id/separator_identification"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="@color/theme_color" />
+
+    <fragment
+        android:name="ch.bfh.evoting.voterapp.hkrs12.fragment.ResultChartFragment"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:tag="resultChart" />
+
+</LinearLayout>

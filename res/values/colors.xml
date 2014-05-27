@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    	<color name="theme_color">#FFFF2600</color>
+    	<color name="poll">@color/theme_color</color>
+    	<color name="participant">@color/theme_color</color>
+    	<color name="option">@color/theme_color</color>
+    	<color name="network">@color/theme_color</color>
+    	<color name="hotspot">@color/theme_color</color>
+    	<color name="background_overlay">#88000000</color>
+</resources>

@@ -1,0 +1,64 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginLeft="@dimen/activity_horizontal_margin"
+    android:layout_marginRight="@dimen/activity_horizontal_margin"
+    android:background="@drawable/background_image"
+    android:fadingEdge="horizontal"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/textview_text_header"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margin"
+        android:gravity="center_vertical|center_horizontal"
+        android:minHeight="70dp"
+        android:text="@string/subtitle_welcome"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <TextView
+        android:id="@+id/textview_text_edition"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margin"
+        android:gravity="center_vertical|center_horizontal"
+        android:minHeight="10dp"
+        android:text="@string/subtitle_edition"
+        android:textAppearance="?android:attr/textAppearanceSmall" />
+    
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="@dimen/margin"
+        android:gravity="center_vertical"
+        android:orientation="vertical"
+        tools:context=".AdminAppMainActivity" >
+
+        <Button
+            android:id="@+id/button_joinnetwork"
+            style="@style/MainButtons"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="80dip"
+            android:text="@string/join_network" />
+
+        <Button
+            android:id="@+id/button_polls"
+            style="@style/MainButtons"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="80dip"
+            android:text="@string/polls" />
+
+        <Button
+            android:id="@+id/button_archive"
+            style="@style/MainButtons"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="80dip"
+            android:text="@string/poll_archive" />
+    </LinearLayout>
+
+</LinearLayout>

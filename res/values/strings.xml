@@ -1,0 +1,368 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Common words -->
+    <string name="ok">OK</string>
+    <string name="cancel">Cancel</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="add">Add</string>
+    <string name="close">Close</string>
+    <string name="help">Help</string>
+    <string name="content">Content</string>
+    <string name="description">Description</string>
+    <string name="identification">Your identification</string>
+    <string name="polls">Votes</string>
+    <string name="question">Question</string>
+    <string name="options">Options</string>
+    <string name="participants">Participants</string>
+    <string name="vote_singular">ballot</string>
+    <string name="vote_plural">ballots</string>
+    <string name="empty_vote">Blank vote</string>
+    <string name="join">Join</string>
+
+    <!-- Activities -->
+    <string name="notification">A vote is currently running. Tap to bring to front.</string>
+    <string name="poll_archive">Vote archive</string>
+    <string name="cast_votes">Cast ballots: %1$d of %2$d</string>
+    <string name="poll_start_time">Start date</string>
+    <string name="number_voters">Eligible voters</string>
+    <string name="number_cast_votes">Cast ballots</string>
+    <string name="participation">Participation</string>
+    <string name="result_chart">Result chart</string>
+    <string name="archived_votes">Archived votes</string>
+    <string name="no_archived_votes">There are currently no archived votes</string>
+    <string name="no_votes">There are currently no votes</string>
+    <string name="no_options">There are currently no options</string>
+    <string name="allow_empty_vote">Allow blank ballots</string>
+
+    <!-- Network -->
+    <string name="network_name">Network name</string>
+    <string name="network_info">Network information</string>
+    <string name="network_wlan_key">Wi-Fi Key</string>
+    <string name="not_connected">No network set up</string>
+    <string name="networks">Network connection for voting</string>
+    <string name="dialog_wait_wifi">Please wait&#8230;</string>
+    <string name="button_use_actual_ssid">Use network \"%1$s\"</string>
+    <string name="advance_network_config">Advanced network configuration</string>
+    <string name="button_scan_nfc">Scan NFC tag</string>
+    <string name="write_nfc_tag">Write NFC tag</string>
+    <string name="put_nfc">Put a NFC tag in proximity of your device&#8230;</string>
+    <string name="create_new_network">Use Android hotspot</string>
+    <string name="capture_qrcode">Scan QR-code</string>
+    <string name="join_network">Join electorate</string>
+    <string name="group_password_desc">Group password</string>
+    <string name="group_name_desc">Group number</string>
+    <string name="recreate_network">Modify</string>
+    <string name="join_group_title">Join group</string>
+    <string name="wpa_secure">WPA secured network</string>
+    <string name="wep_secure">WEP secured network</string>
+    <string name="unsecure">Unsecure open network</string>
+    <string name="no_group_available">No groups available</string>
+    
+
+    <!-- Action bar titles -->
+    <string name="action_redo_poll">Repeat vote</string>
+    <string name="action_clone_poll">Clone vote</string>
+    <string name="action_create_poll">Create new vote</string>
+    <string name="action_start_poll">Start vote</string>
+    <string name="action_next">Next</string>
+    <string name="action_stop_poll">Finish vote</string>
+    <string name="action_cancel_poll">Cancel vote</string>
+    <string name="action_start_poll_period">Start voting period</string>
+    <string name="action_export">Export</string>
+
+    <!-- Question Dialogs -->
+    <string name="dialog_title_confirm_vote">Cast ballot?</string>
+    <string name="dialog_confirm_vote">
+<![CDATA[
+			You have selected the following option:<br /><br /><b>%1$s</b><br /><br />Do you want to confirm your choice and cast your ballot?
+		]]>
+    </string>
+    <string name="dialog_title_save_poll">Save vote?</string>
+    <string name="dialog_save_poll">Do you want to save the modifications done on this vote?</string>
+    <string name="dialog_title_stop_poll">Finish vote?</string>
+    <string name="dialog_stop_poll">Some participants have not cast their ballot yet. Do you really want to end the voting period?</string>
+    <string name="dialog_title_cancel_poll">Cancel vote?</string>
+    <string name="dialog_cancel_poll">Do you really want to cancel the vote?</string>
+    <string name="dialog_title_add_option">Add option in edition?</string>
+    <string name="dialog_add_option">You still have an option in edition. Do you want to add it to the vote?</string>
+    <string name="dialog_title_back">Quit?</string>
+    <string name="dialog_back">By going back, you will not be able to participate to the vote. Do you really want that?</string>
+    <string name="dialog_back_admin">By going back, you will not be able to administrate the vote. You will have to restart the procedure from the beginning. Do you really want that?</string>
+    <string name="dialog_back_result">By going back, you will not be able to see the result of the vote. Do you really want that?</string>
+    <string name="dialog_title_access_point">Android Wi-Fi hotspot</string>
+    <string name="dialog_content_access_point">The Android Wi-Fi hotspot is already enabled. Do you want to use this connection?</string>
+    <string name="nfc_enable_nfc">Enable NFC?</string>
+    <string name="nfc_enable_nfc_question">In order to use this feature, NFC must be enabled. Do you want to enable it now?</string>
+
+    <!-- Error or Info Dialogs / Toast -->
+    <string name="toast_scroll">Please have a look at all options first.</string>
+    <string name="toast_choose_one_option">Please choose one of the possible options.</string>
+    <string name="toast_join_error_admin">A group with the same name already exists. Please choose another name.</string>
+    <string name="toast_join_error_voter">No group with the given name exists. Please wait for the administrator to create the group.</string>
+    <string name="toast_join_error_invalid_name">Invalid group name. Please choose another name.</string>
+    <string name="toast_join_error">Error creating/joining the group.</string>
+    <string name="toast_join_error_voter_network">Error joining the group. It seems there is a problem with your network card. Please try to disable the Wi-Fi and enable it again.</string>
+    <string name="toast_join_error_no_groups">No groups found on the network. Please make sure that the administrator already created a group, and make sure the network supports Multicast messages.</string>
+    <string name="toast_network_connection_error">Failed to connect to Wi-Fi network.</string>
+    <string name="toast_redo_impossible">An error occurred while trying to restart the vote.</string>
+    <string name="toast_wifi_is_not_connected">You are currently not connected to a Wi-Fi network. Please choose another option.</string>
+    <string name="toast_wifi_is_disabled">Wi-Fi is currently disabled. Please enable it first.</string>
+    <string name="toast_network_lost">You have been disconnected from the group.</string>
+    <string name="toast_question_empty">Please specify a question.</string>
+    <string name="toast_not_enough_options">Please specify at least two options.</string>
+    <string name="toast_option_empty">Please specify a text for the option.</string>
+    <string name="toast_not_enough_participant_selected">Please select at least two participants.</string>
+    <string name="toast_not_everybody_accepted">Not everybody has accepted the vote. Please wait for them to accept it or exclude the concerned people from the electorate.</string>
+    <string name="toast_nfc_tag_read_failed">Unable to read NFC tag</string>
+    <string name="toast_no_identification">Please specify your identification.</string>
+    <string name="toast_network_not_found_text">Wi-Fi network \"%1$s\" not available.</string>
+    <string name="toast_content_connect_failed">Connection to Wi-Fi network failed.</string>
+    <string name="toast_nfc_write_success">NFC tag written successfully.</string>
+    <string name="toast_file_exported">File exported under \"%1$s\".</string>
+    <string name="toast_export_failed">Export failed: file not found.</string>
+    <string name="dialog_title_attack_detected">Attack detected</string>
+    <string name="dialog_attack_impersonalization">An attack has been detected! Someone is trying to impersonate a group member in order to be able to vote in his name. We strongly recommend to interrupt the vote period and restart.</string>
+    <string name="dialog_attack_different_senders">An attack has been detected! Someone has sent a message on behalf of another member of the group. We strongly recommand to interrupt the vote period and restart.</string>
+    <string name="dialog_attack_different_salts">An attack has been detected! Someone is block the vote. Create a new group and give the password only to people allowed to vote.</string>
+    <string name="dialog_not_included_title">Not allowed to vote</string>
+    <string name="dialog_not_included">You were not included in the electorate. You are not allowed to vote.</string>
+    <string name="dialog_title_network_lost">Group connection lost</string>
+    <string name="dialog_network_lost">The group connection has been lost. You will not be able to vote.</string>
+    <string name="dialog_title_wrong_key">Wrong group password</string>
+    <string name="dialog_wrong_key_pwd">You probably entered a wrong group password. Please double check the password with another group member. If they do not match, go back and try to reconnect to the group. If they match, there is probably an attacker on the network</string>
+    <string name="dialog_nfc_write_failed">NFC tag write failed</string>
+    <string name="dialog_nfc_readonly">This NFC tag is read only.</string>
+    <string name="dialog_nfc_not_enough_space">This NFC tag does not have enough free space.</string>
+    <string name="dialog_nfc_unable_format_ndef">Unable to format NFC tag to NDEF.</string>
+    <string name="dialog_nfc_no_ndef_support">This NFC tag does not appear to support NDEF format.</string>
+    <string name="dialog_title_result_chart">Result chart</string>
+    <string name="dialog_title_result_not_shown">Result not shown</string>
+    <string name="dialog_result_not_shown">There were less than three voters. In order to keep the vote secrecy, the result is not shown.</string>
+    <string name="dialog_title_result_not_computed">Result not computed</string>
+    <string name="dialog_result_not_computed">The application was not able to compute the result. We apologize for the inconvenience this may cause.</string>
+    <string name="dialog_title_poll_canceled">Vote cancelled</string>
+    <string name="dialog_poll_canceled">The administrator has canceled the vote. You will be redirected to the main screen.</string>
+    <string name="dialog_title_different_polls">Different vote content</string>
+    <string name="dialog_different_polls">The content of the vote seem not to be the same for you and for the administrator. The vote will be cancelled.</string>
+    <string name="dialog_title_different_protocols">Different protocols</string>
+    <string name="dialog_different_protocols">Your app is not using the same cryptographic protocol as the app of the administrator. The vote will be cancelled.</string>
+    <string name="dialog_title_no_result">No result computed</string>
+    <string name="dialog_no_result">You were the administrator and were not included in the electorate, so you did not participate to the vote. Thus, no result can be computed.</string>
+    <string name="dialog_title_proof_verification_failed">Participant misbehaved</string>
+    <string name="dialog_proof_verification_failed">Participant \"%1$s\" did not respect a step from the protocol. They will be excluded from the voting process.</string>
+        
+
+    <!-- Help overlays -->
+    <string name="overlay_close">Touch the screen to close this help</string>
+    <string name="overlay_identification">Put your identification here&#8230;</string>
+    <string name="overlay_network_option">&#8230; then choose a method to join the voting session.</string>
+    <string name="overlay_review">Check the content&#8230;</string>
+    <string name="overlay_review_ok">&#8230; and press the button if you agree with it.</string>
+    <string name="overlay_previous_screen">Use this button to return to the previous screen.</string>
+
+    <!-- Activity titles -->
+    <string name="voter_app_app_name">MobiVote KSRH12</string>
+    <string name="title_activity_check_electorate">Electorate</string>
+    <string name="title_activity_wait_for_votes">Vote progress</string>
+    <string name="title_activity_vote">Vote</string>
+    <string name="title_activity_list_terminated_polls">Vote archive</string>
+    <string name="title_activity_display_result">Vote result</string>
+    <string name="title_activity_network_informations">Network information</string>
+    <string name="title_activity_create_network">Use Android hotspot</string>
+    <string name="title_activity_poll">Vote administration</string>
+    <string name="title_activity_network_config">Network configuration</string>
+    <string name="title_activity_poll_detail">Vote setup</string>
+    <string name="title_activity_electorate">Electorate selection</string>
+    <string name="title_activity_review_poll">Vote review</string>
+    <string name="title_activity_wait_for_votes_admin">Vote progress</string>
+
+    <!-- Activity subtitles -->
+    <string name="subtitle_welcome">Welcome to MobiVote</string>
+    <string name="subtitle_edition">KSRH12 Edition</string>
+    <string name="subtitle_check_electorate">Please wait&#8230;</string>
+    <string name="subtitle_wait_votes">Thanks for voting!\nWaiting for ballots&#8230;</string>
+    <string name="subtitle_wait_votes_admin">Thanks for voting!\nWaiting for ballots&#8230;</string>
+
+    <!-- Hints in EditText fields -->
+    <string name="hint_group_name">Group number</string>
+    <string name="hint_group_password">Group password</string>
+    <string name="hint_network_wlan_key">Wi-Fi key</string>
+    <string name="hint_enter_question">Enter the question of the vote here</string>
+    <string name="hint_enter_option">Enter the option here</string>
+    <string name="hint_identification">Identification</string>
+
+    <!-- Image descriptions -->
+    <string name="description_participant_included">Participants included</string>
+    <string name="description_network">Network</string>
+    <string name="description_participant_avatar">Participant avatar</string>
+    <string name="description_accepted">Review accepted</string>
+    <string name="description_poll">Vote</string>
+    <string name="description_delete_poll">Delete vote</string>
+    <string name="description_option">Option</string>
+    <string name="description_add_option">Add option</string>
+    <string name="description_qrcode">QR-code</string>
+    <string name="description_cast">Cast ballot</string>
+
+    <!-- Help dialog titles -->
+    <string name="help_title_main">Welcome to MobiVote</string>
+    <string name="help_title_electorate">Electorate selection</string>
+    <string name="help_title_review">Vote review</string>
+    <string name="help_title_network_info">Network information</string>
+    <string name="help_title_vote">Vote</string>
+    <string name="help_title_wait">Vote progress</string>
+    <string name="help_title_display_results">Vote result</string>
+    <string name="help_title_archive">Vote archive</string>
+    <string name="help_title_network_config">Network configuration</string>
+    <string name="help_title_poll">Vote administration</string>
+    <string name="help_title_poll_details">Vote setup</string>
+
+    <!-- Help dialog texts -->
+    <string name="help_text_main">
+<![CDATA[
+			This app allows you to set up a vote between people using their smartphone. A Wi-Fi network is used for communication between smartphones.
+			<br /><br />
+			In this screen, you have three options.
+			<ul>
+			<li><b>Join electorate:</b> join a vote initiated by another person.</li>
+			<li><b>Votes:</b> set up your own vote.</li>
+			<li><b>Vote archive:</b> consult old votes in which you participated.</li>
+			</ul>
+			<br />
+			<b>About this app</b>
+			<br />This app was created in a Master thesis of a student affiliated to the e-voting research group at the Bern University of Applies Sciences (BFH)<br/> (see the <a href="http://e-voting.bfh.ch">website</a>).
+		]]>
+    </string>
+    <string name="help_text_poll">
+<![CDATA[
+			<b>In this screen you can create your own votes</b>. All the votes you have created (but which you didn\'t run) appear on this screen.
+			<b>This screen allows you to prepare a vote that will be run later</b>.
+			<br/><br/>
+			<ul>
+			<li>By clicking on one of the available votes, you will enter the editing screen, where you will be able to modify the vote or to run it.</li>
+			<li>With the button at the bottom of the list of available votes, you can define a new vote.</li>
+			<li>The trash icon allows you to delete a vote.</li>
+			</ul>
+		]]>
+    </string>
+    <string name="help_text_poll_details">
+<![CDATA[
+			<b>In this screen you can define the properties of the vote.</b>
+			<ul>
+			<li><b>Question:</b> this is the question to which the voter will have to answer.</li>
+			<li><b>Options:</b> this is the list of answers from which the voters will have to choose one. You can add an option by entering a text in the field at the bottom of the screen and save it by clicking the + button. You can remove an option by clicking on the corresponding trash icon.</li>
+			<li><b>Allow blank votes:</b> this checkbox adds or removes an option from the list which represents the "No opinion" vote</li>
+			</ul>
+			When you have finished defining the vote, you can start the vote by clicking on the \"Start vote\" button.<br/>
+			When clicking on the back button, you will be able to save the vote.<br/>
+			When you save it, you will be able to access it again later in order to modify or run it.
+		]]>
+    </string>
+    <string name="help_text_network_config">
+<![CDATA[
+			<b>In this screen you have to configure the way to connect to the vote session.</b>
+			<br/><br/>
+			First, you have to enter your identification (for example your name). Then you have to choose which Wi-Fi network you want to use. Finally, you have to enter the group credentials.
+			<ul>
+				<li><b>If you are the administrator of the vote</b>, you only have to choose the Wi-Fi network you want to use. 
+				For this purpose, you have two possibilities. Either you can use the curently connected Wi-Fi network (button \"Use network x\"), 
+				or you can choose the advanced network settings where you can choose the network you want to connect to. 
+				You also have the possibility to set up an access point on your device. This will work only with a vote with a few participants.</li>
+				<li><b>If you simply want to join an existing session</b>, you have four options:</li>
+				<ul>
+				<li><b>Scan QR-code:</b> with this option, you just have to scan the QR-code displayed on the administrator\'s device. After the scan, the connection will be set up automatically.</li>
+				<li><b>Scan NFC tag:</b> if your device support NFC technology, you can scan data saved on a NFC tag. After the scan, the connection will be set up automatically.</li>
+				<li><b>Use network x:</b> this option allows you to use the network to which you are currently connected.
+			 	When clicking on this button, you will have to enter the credentials of the voting session that have been defined on the administrator\'s device. If no group name is shown is the drop down list and the administrator already created the group, please verify that multicast is supported on the network you are connected to.</li>
+				<li><b>Advanced network setting:</b> this options allows you to select a different network. You will then have to enter the credentials of the vote session that have been defined on the administrator\'s device.</li>	
+				</ul>
+			</ul>
+			
+		]]>
+    </string>
+    <string name="help_text_network_info">
+<![CDATA[
+			<b>This screen displays the information about the vote session.</b>
+			<ul>
+				<li><b>Network name:</b> the Wi-Fi network on which the vote session takes place.</li>
+				<li><b>Group number:</b> the name of the group.</li>
+				<li><b>Group password:</b> the password that must be shared among all members of the group.</li>
+				<li><b>QR-code:</b> the QR-code that can be scanned by people who want to join the group.</li>
+				<li><b>Write NFC tag:</b> if your device support NFC technology, this button will be displayed. It allows you to write the information on a NFC tag which can be scaned by other people.</li>
+				<li><b>Your identification:</b> the name which identifies you in the group.</li>
+			</ul>
+		]]>
+    </string>
+    <string name="help_text_electorate_admin">
+<![CDATA[
+			In this screen, you as creator of the vote (also called administrator), <b>have to select the people that will have the right to vote</b>.  
+			<br/><br/>
+			This screen shows you all the participants that are connected to the network session. Using the checkboxes on the right, you can select the participants that will be allowed to vote.
+		]]>
+    </string>
+    <string name="help_text_review_admin">
+<![CDATA[
+			<b>In this screen, you as administrator, have to wait until each participant agrees with the content of the vote and the electorate.</b>
+			<br/>Once each participant has accepted the content of the vote, you can start the voting period.
+			<br/><br/>If a participant does not agree with the content of the vote, you can go back to the editing screen using the back button.<br/>
+			If a participant does not accept the content of the vote in order to block the vote, you can go back and exclude them from the electorate.
+		]]>
+    </string>
+    <string name="help_text_electorate_voter">
+<![CDATA[
+			<b>In this screen you can see which participants of the group are included in the electorate by the administrator of the vote.</b>
+			Once the administrator has selected all the participants he wants, you will be redirected to the next screen. 
+		]]>
+    </string>
+    <string name="help_text_review_voter">
+<![CDATA[
+			<b>In this screen you have to check whether the content of the vote is correct.</b> If you agree with it, you can click the red tick button next to your name in the list of the participants.
+			<br/><br/>
+			You especially have to check the following things:
+			<ul>
+				<li>Is the question correct?</li>
+				<li>Does the list of options contain all options?</li>
+				<li>Is every person that has the right to vote in the participant list?</li>
+				<li>Does someone without right to vote appear in the list?</li>
+				<li>Double check your screen with the one of another voter to control that the list of chars under your name is the same on both devices.</li>
+			</ul>
+			If one of these conditions is not fulfilled, you should not accept the review and ask the administrator of the vote to modify it. If the list of chars under your name is different on another device, you are victim of an impersonation attack and should ask the administrator to create a new network in order to run the election.
+		]]>
+    </string>
+    <string name="help_text_vote">
+<![CDATA[
+			<b>In this screen you have to select the option you want to vote for.</b> When selecting an option, a dialog will be shown asking you to confirm your choice.
+		]]>
+    </string>
+    <string name="help_text_wait_admin">
+<![CDATA[
+			<b>This screen shows the progress of the vote.</b> In the list of participants you can see who has not voted yet.
+			 If someone is not voting (because of a phone problem, boycott or another reason), you as administrator of the vote can decide to end the voting period by pressing on the "Finish vote" button.
+			<br/><br/>Once everybody has voted, you will be redirected to the result screen.
+		]]>
+    </string>
+    <string name="help_text_wait_voter">
+<![CDATA[
+			<b>This screen shows the progress of the vote.</b> In the list of participants you can see who has not voted yet.
+			<br/><br/>Once everybody has voted, you will be redirected to the result screen.
+		]]>
+    </string>
+    <string name="help_text_display_results">
+<![CDATA[
+			<b>This screen displays the result of the vote</b>
+			<br/><br/>
+			If you were the administrator of this vote and the vote just finished, you can redo the vote by clicking on the "Redo vote" button.
+			<br/><br/>
+			If you access this screen through the vote archive, you can clone this vote in order to run it again later.
+		]]>
+    </string>
+    <string name="help_text_archive">
+<![CDATA[
+			<b>This screen shows a list of all votes to which you participated</b>
+			<br/><br/>
+			When you select a vote in the list, you will be redirected to the screen displaying the result of this vote.
+		]]>
+    </string>
+
+</resources>

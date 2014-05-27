@@ -1,0 +1,87 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/title"
+        style="@style/DialogTitleStyle"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/dialog_title_margin"
+        android:text="@string/join_group_title" >
+    </TextView>
+
+    <View
+        android:id="@+id/separator_identification"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="@color/theme_color" />
+
+    <!-- <EditText
+        android:id="@+id/edittext_group_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="4dp"
+        android:layout_marginLeft="4dp"
+        android:layout_marginRight="4dp"
+        android:layout_marginTop="16dp"
+        android:hint="@string/hint_group_name"
+        android:inputType="number" />-->
+    <TextView
+        android:id="@+id/textview_group_name_desc"
+        style="?android:attr/listSeparatorTextViewStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="@string/group_name_desc" >
+    </TextView>
+    <Spinner
+        android:id="@+id/groups_spinner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="4dp"
+        android:layout_marginLeft="4dp"
+        android:layout_marginRight="4dp"
+        android:layout_marginTop="4dp"
+        android:prompt="@string/hint_group_name" />
+
+    <TextView
+        android:id="@+id/textview_group_password_desc"
+        style="?android:attr/listSeparatorTextViewStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/hint_group_password" >
+    </TextView>
+    <EditText
+        android:id="@+id/edittext_password"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="4dp"
+        android:layout_marginLeft="4dp"
+        android:layout_marginRight="4dp"
+        android:layout_marginTop="4dp"
+        android:hint="@string/hint_group_password"
+        android:inputType="text" />
+	
+    <TextView
+        android:id="@+id/textview_wlan_key_desc"
+        style="?android:attr/listSeparatorTextViewStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/hint_network_wlan_key" >
+    </TextView>
+    <EditText
+        android:id="@+id/edittext_networkkey"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="4dp"
+        android:layout_marginLeft="4dp"
+        android:layout_marginRight="4dp"
+        android:layout_marginTop="4dp"
+        android:hint="@string/hint_network_wlan_key"
+        android:inputType="textPassword" />
+
+</LinearLayout>
