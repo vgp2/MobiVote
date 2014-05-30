@@ -48,13 +48,17 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
+import android.util.Log;
 import ch.bfh.evoting.voterapp.hkrs12.AndroidApplication;
 import ch.bfh.evoting.voterapp.hkrs12.entities.Option;
 import ch.bfh.evoting.voterapp.hkrs12.entities.Participant;
 import ch.bfh.evoting.voterapp.hkrs12.entities.Poll;
 import ch.bfh.evoting.voterapp.hkrs12.util.ObservableTreeMap;
-import ch.bfh.unicrypt.crypto.random.classes.PseudoRandomOracle;
-import ch.bfh.unicrypt.crypto.random.classes.ReferenceRandomByteSequence;
+import ch.bfh.unicrypt.helper.array.ByteArray;
+import ch.bfh.unicrypt.helper.factorization.SafePrime;
+import ch.bfh.unicrypt.helper.hash.HashAlgorithm;
+//import ch.bfh.unicrypt.crypto.random.classes.PseudoRandomOracle;
+//import ch.bfh.unicrypt.crypto.random.classes.ReferenceRandomByteSequence;
 import ch.bfh.unicrypt.math.algebra.concatenative.classes.ByteArrayElement;
 import ch.bfh.unicrypt.math.algebra.concatenative.classes.ByteArrayMonoid;
 import ch.bfh.unicrypt.math.algebra.dualistic.classes.ZMod;
@@ -64,8 +68,10 @@ import ch.bfh.unicrypt.math.algebra.general.interfaces.Element;
 import ch.bfh.unicrypt.math.algebra.multiplicative.classes.GStarMod;
 import ch.bfh.unicrypt.math.algebra.multiplicative.classes.GStarModElement;
 import ch.bfh.unicrypt.math.algebra.multiplicative.classes.GStarModSafePrime;
-import ch.bfh.unicrypt.math.helper.ByteArray;
-import ch.bfh.unicrypt.math.helper.factorization.SafePrime;
+import ch.bfh.unicrypt.random.classes.PseudoRandomOracle;
+import ch.bfh.unicrypt.random.classes.ReferenceRandomByteSequence;
+//import ch.bfh.unicrypt.math.helper.ByteArray;
+//import ch.bfh.unicrypt.math.helper.factorization.SafePrime;
 
 public class ProtocolPoll extends Poll {
 
@@ -77,7 +83,7 @@ public class ProtocolPoll extends Poll {
 	//when updating this, do not forget to also update serializedSafePrimeofP variable
 	private static BigInteger p = new BigInteger("24421817481307177449647246484681681783337829412862177682538435312071281569646025606745584903210775224457523457768723824442724616998787110952108654428565400454402598245210227144929556256697593550903247924055714937916514526166092438066936693296218391429342957961400667273342778842895486447440287639065428393782477303395870298962805975752198304889507138990179204870133839847367098792875574662446712567387387134946911523722735147628746206081844500879809860996360597720571611720620174658556850893276934140542331691801045622505813030592119908356317756153773900818965668280464355085745552657819811997912683349698802670648319"); 
 	//this correspond to the SafePrime object containing p in a serialized form
-	private String serializedSafePrimeofP = "rO0ABXNyADNjaC5iZmgudW5pY3J5cHQubWF0aC5oZWxwZXIuZmFjdG9yaXphdGlvbi5TYWZlUHJpbWWyvqMSqeOumgIAAHhyAC9jaC5iZmgudW5pY3J5cHQubWF0aC5oZWxwZXIuZmFjdG9yaXphdGlvbi5QcmltZWp9MF748cJqAgAAeHIAPmNoLmJmaC51bmljcnlwdC5tYXRoLmhlbHBlci5mYWN0b3JpemF0aW9uLlNwZWNpYWxGYWN0b3JpemF0aW9u38aui3+qN3cCAAB4cgA3Y2guYmZoLnVuaWNyeXB0Lm1hdGguaGVscGVyLmZhY3Rvcml6YXRpb24uRmFjdG9yaXphdGlvbi+9CK5/FWTKAgADWwAJZXhwb25lbnRzdAACW0lbAAxwcmltZUZhY3RvcnN0ABdbTGphdmEvbWF0aC9CaWdJbnRlZ2VyO0wABXZhbHVldAAWTGphdmEvbWF0aC9CaWdJbnRlZ2VyO3hyACRjaC5iZmgudW5pY3J5cHQubWF0aC5oZWxwZXIuVW5pQ3J5cHQAAAAAAAAAAQIAAHhwdXIAAltJTbpgJnbqsqUCAAB4cAAAAAEAAAABdXIAF1tMamF2YS5tYXRoLkJpZ0ludGVnZXI7DnzbRuA6YMYCAAB4cAAAAAFzcgAUamF2YS5tYXRoLkJpZ0ludGVnZXKM/J8fqTv7HQMAAkkABnNpZ251bVsACW1hZ25pdHVkZXQAAltCeHIAEGphdmEubGFuZy5OdW1iZXKGrJUdC5TgiwIAAHhwAAAAAXVyAAJbQqzzF/gGCFTgAgAAeHAAAAEAwXVDXuuKegbZYUnx0w9Zrh5w8EANrSiQfZH3BSNa5mpixdJdpogbAtWcmCctxJgDlJ9ZIfmB8QCoGHe6Ie7E8Tih8QfyCjBxruHuu29S7ryuNcmSH+gHYDXQQ1hrgn2ri8i5NKUoN6167nyQX8VSq0cOapxqX54im5yqhSvBAw2X3fRoOcVuel2oV189MjdvhDIM/+1g4jwyV9UwyA1s/bX4nuSeeaNNyHKPKJL9598XoLaK0sUI5AAVzF7IOZ4dV0mvWGJ+YSbc6+DaYvGRUvHhVWEYQG98aAPp2Rz73vjVFKZRauKxVnEGvBWHQUxLifziEf9Wx1at+0/pvlw7/3hxAH4AEA==";
+	private String serializedSafePrimeofP = "rO0ABXNyAC5jaC5iZmgudW5pY3J5cHQuaGVscGVyLmZhY3Rvcml6YXRpb24uU2FmZVByaW1lzEYaSXqxXPACAAB4cgAqY2guYmZoLnVuaWNyeXB0LmhlbHBlci5mYWN0b3JpemF0aW9uLlByaW1lC09p/ri/FwsCAAB4cgA5Y2guYmZoLnVuaWNyeXB0LmhlbHBlci5mYWN0b3JpemF0aW9uLlNwZWNpYWxGYWN0b3JpemF0aW9uSQgdmBj1KJgCAAB4cgAyY2guYmZoLnVuaWNyeXB0LmhlbHBlci5mYWN0b3JpemF0aW9uLkZhY3Rvcml6YXRpb252Jhq+x1QMUQIAA1sACWV4cG9uZW50c3QAAltJWwAMcHJpbWVGYWN0b3JzdAAXW0xqYXZhL21hdGgvQmlnSW50ZWdlcjtMAAV2YWx1ZXQAFkxqYXZhL21hdGgvQmlnSW50ZWdlcjt4cgAfY2guYmZoLnVuaWNyeXB0LmhlbHBlci5VbmlDcnlwdAAAAAAAAAABAgAAeHB1cgACW0lNumAmduqypQIAAHhwAAAAAQAAAAF1cgAXW0xqYXZhLm1hdGguQmlnSW50ZWdlcjsOfNtG4DpgxgIAAHhwAAAAAXNyABRqYXZhLm1hdGguQmlnSW50ZWdlcoz8nx+pO/sdAwACSQAGc2lnbnVtWwAJbWFnbml0dWRldAACW0J4cgAQamF2YS5sYW5nLk51bWJlcoaslR0LlOCLAgAAeHAAAAABdXIAAltCrPMX+AYIVOACAAB4cAAAAQDBdUNe64p6BtlhSfHTD1muHnDwQA2tKJB9kfcFI1rmamLF0l2miBsC1ZyYJy3EmAOUn1kh+YHxAKgYd7oh7sTxOKHxB/IKMHGu4e67b1LuvK41yZIf6AdgNdBDWGuCfauLyLk0pSg3rXrufJBfxVKrRw5qnGpfniKbnKqFK8EDDZfd9Gg5xW56XahXXz0yN2+EMgz/7WDiPDJX1TDIDWz9tfie5J55o03Ico8okv3n3xegtorSxQjkABXMXsg5nh1XSa9YYn5hJtzr4Npi8ZFS8eFVYRhAb3xoA+nZHPve+NUUplFq4rFWcQa8FYdBTEuJ/OIR/1bHVq37T+m+XDv/eHEAfgAQ";
 	
 	private GStarModSafePrime G_q;
 	private ZMod Z_q;
@@ -89,7 +95,7 @@ public class ProtocolPoll extends Poll {
 
 	public ProtocolPoll(Poll poll){
 		super(poll.getId(), poll.getQuestion(), poll.getStartTime(), poll.getOptions(), poll.getParticipants(), poll.isTerminated());
-		SafePrime sp = (SafePrime)AndroidApplication.getInstance().getSerializationUtil().deserialize(serializedSafePrimeofP);
+		SafePrime sp = /*SafePrime.getInstance(p);*/(SafePrime)AndroidApplication.getInstance().getSerializationUtil().deserialize(serializedSafePrimeofP);
 		G_q = GStarModSafePrime.getInstance(sp);
 		Z_q = G_q.getZModOrder();
 	}
@@ -99,29 +105,33 @@ public class ProtocolPoll extends Poll {
 	 * and the representation of the option
 	 */
 	public void generateGenerator(){
-
+		
+		//TODO since SHA256 of OpenSSL is not serializable this cannot be used anymore
 		//computes a commitment to the text of the poll and use this commitment as generator
-		String texts = this.getQuestion();
-		Element[] representations = new Element[this.getOptions().size()];
-		int i=0;
-		for(Option op:this.getOptions()){
-			texts += op.getText();
-			representations[i]=((ProtocolOption)op).getRepresentation();
-			i++;
-		}
-		
-		Tuple tuple = Tuple.getInstance(representations);
-		FiniteByteArrayElement representationsElement = tuple.getHashValue();
-		ByteArrayElement textElement = ByteArrayMonoid.getInstance().getElement(texts.getBytes());
-
-		ByteBuffer buffer = ByteBuffer.allocate(textElement.getValue().getLength()+representationsElement.getValue().getLength());
-		buffer.put(textElement.getValue().getAll());
-		buffer.put(representationsElement.getValue().getAll());
-		buffer.flip(); 
-		
-		ReferenceRandomByteSequence rrs = PseudoRandomOracle.getInstance().getReferenceRandomByteSequence(ByteArray.getInstance(buffer.array()));
-		generator = G_q.getIndependentGenerator(1, rrs);
-
+//		String texts = this.getQuestion();
+//		Element[] representations = new Element[this.getOptions().size()];
+//		int i=0;
+//		for(Option op:this.getOptions()){
+//			texts += op.getText();
+//			representations[i]=((ProtocolOption)op).getRepresentation();
+//			i++;
+//		}
+//		
+//		Tuple tuple = Tuple.getInstance(representations);
+//		ByteArray representationsElement = tuple.getByteArray();//getHashValue();
+//		ByteArray textElement = ByteArray.getInstance(texts.getBytes());
+//
+//		ByteBuffer buffer = ByteBuffer.allocate(textElement.getLength()+representationsElement.getLength());
+//		buffer.put(textElement.getAll());
+//		buffer.put(representationsElement.getAll());
+//		buffer.flip(); 
+//		
+//		TODO MessageDigest of Android OpenSSL is not Serializable !!!
+//		ReferenceRandomByteSequence rrs = PseudoRandomOracle.getInstance().getReferenceRandomByteSequence(ByteArray.getInstance(buffer.array()));
+//		generator = G_q.getElementFrom(G_q.getIndependentGenerator(1, rrs).getByteTree());
+//		generator = G_q.getElement((G_q.getIndependentGenerator(1, rrs).getBigInteger()));
+		generator = G_q.getDefaultGenerator();
+//		rrs = null;
 	}
 
 	/**

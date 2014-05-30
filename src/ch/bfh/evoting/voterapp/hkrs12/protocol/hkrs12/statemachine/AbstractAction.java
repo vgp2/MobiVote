@@ -244,11 +244,19 @@ public abstract class AbstractAction implements Action {
 				if(p!=null){
 					if(AbstractAction.this instanceof SetupRoundAction){
 						poll.getCompletelyExcludedParticipants().put(p.getUniqueId(), p);
-						//TODO notify exclusion
+						//notify exclusion
+						LocalBroadcastManager.getInstance(AndroidApplication.getInstance())
+						.sendBroadcast(new Intent(BroadcastIntentTypes.proofVerificationFailed)
+							.putExtra("type", 2)
+							.putExtra("participant", p.getIdentification()));
 						Log.w(TAG, "Participant "+p.getIdentification()+" ("+p.getUniqueId()+") went out of the network before submitting the setup value, so he was completely excluded (also from recovery).");
 					} else {
 						poll.getExcludedParticipants().put(p.getUniqueId(), p);
-						//TODO notify exclusion
+						//notify exclusion
+						LocalBroadcastManager.getInstance(AndroidApplication.getInstance())
+						.sendBroadcast(new Intent(BroadcastIntentTypes.proofVerificationFailed)
+							.putExtra("type", 3)
+							.putExtra("participant", p.getIdentification()));
 						Log.w(TAG, "Participant "+p.getIdentification()+" ("+p.getUniqueId()+") was added to excluded list since he went out of the network.");
 					}
 				}
@@ -367,13 +375,21 @@ public abstract class AbstractAction implements Action {
 			for(Participant p:poll.getParticipants().values()){
 				if(AbstractAction.this instanceof SetupRoundAction){
 					if(!messagesReceived.containsKey(p.getUniqueId())){
-						//TODO notify exclusion
+						//notify exclusion
+						LocalBroadcastManager.getInstance(AndroidApplication.getInstance())
+						.sendBroadcast(new Intent(BroadcastIntentTypes.proofVerificationFailed)
+							.putExtra("type", 2)
+							.putExtra("participant", p.getIdentification()));
 						poll.getCompletelyExcludedParticipants().put(p.getUniqueId(), p);
 					}
 					Log.w(TAG, "Participant "+p.getIdentification()+" ("+p.getUniqueId()+") did not responde before timed out for submitting the setup value, so he was completely excluded (also from recovery).");
 				} else if(!messagesReceived.containsKey(p.getUniqueId()) && !poll.getCompletelyExcludedParticipants().containsKey(p.getUniqueId())){
 					poll.getExcludedParticipants().put(p.getUniqueId(), p);
-					//TODO notify exclusion
+					//notify exclusion
+					LocalBroadcastManager.getInstance(AndroidApplication.getInstance())
+					.sendBroadcast(new Intent(BroadcastIntentTypes.proofVerificationFailed)
+						.putExtra("type", 2)
+						.putExtra("participant", p.getIdentification()));
 					Log.w(TAG, "Excluding participant "+p.getIdentification()+" ("+p.getUniqueId()+") because not sending his message.");
 				}
 			}

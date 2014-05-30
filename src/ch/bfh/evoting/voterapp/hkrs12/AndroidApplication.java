@@ -597,9 +597,23 @@ public class AndroidApplication extends Application {
 				}
 			});
 
-			builder.setTitle(R.string.dialog_title_proof_verification_failed);
-			builder.setMessage(getString(R.string.dialog_proof_verification_failed, intent.getStringExtra("participant")));
-
+			builder.setTitle(R.string.dialog_title_excluded);
+			int type = intent.getIntExtra("type", 0);
+			switch(type){
+			case 1:
+				builder.setMessage(getString(R.string.dialog_proof_verification_failed, intent.getStringExtra("participant")));
+				break;
+			case 2:
+				builder.setMessage(getString(R.string.dialog_exclusion_time_out, intent.getStringExtra("participant")));
+				break;
+			case 3:
+				builder.setMessage(getString(R.string.dialog_exclusion_participant_left, intent.getStringExtra("participant")));
+				break;
+			default:
+				builder.setMessage(getString(R.string.dialog_exclusion_default, intent.getStringExtra("participant")));
+				break;
+			}
+			
 			dialogProof = builder.create();
 			dialogProof.setOnShowListener(new DialogInterface.OnShowListener() {
 				@Override

@@ -51,9 +51,10 @@ import ch.bfh.evoting.voterapp.hkrs12.protocol.hkrs12.ProtocolMessageContainer;
 import ch.bfh.evoting.voterapp.hkrs12.protocol.hkrs12.ProtocolParticipant;
 import ch.bfh.evoting.voterapp.hkrs12.protocol.hkrs12.ProtocolPoll;
 import ch.bfh.evoting.voterapp.hkrs12.protocol.hkrs12.statemachine.StateMachineManager.Round;
-import ch.bfh.unicrypt.crypto.proofgenerator.challengegenerator.classes.StandardNonInteractiveSigmaChallengeGenerator;
-import ch.bfh.unicrypt.crypto.proofgenerator.challengegenerator.interfaces.SigmaChallengeGenerator;
-import ch.bfh.unicrypt.crypto.proofgenerator.classes.PreimageProofGenerator;
+//import ch.bfh.unicrypt.crypto.proofgenerator.challengegenerator.classes.StandardNonInteractiveSigmaChallengeGenerator;
+//import ch.bfh.unicrypt.crypto.proofgenerator.challengegenerator.interfaces.SigmaChallengeGenerator;
+//import ch.bfh.unicrypt.crypto.proofgenerator.classes.PreimageProofGenerator;
+import ch.bfh.unicrypt.crypto.proofsystem.classes.PreimageProofSystem;
 import ch.bfh.unicrypt.crypto.schemes.commitment.classes.StandardCommitmentScheme;
 import ch.bfh.unicrypt.math.algebra.general.classes.Tuple;
 
@@ -92,11 +93,11 @@ public class SetupRoundAction extends AbstractAction {
 		//Generator and index of the participant has also to be hashed in the proof
 		Tuple otherInput = Tuple.getInstance(me.getDataToHash(), poll.getDataToHash());
 
-		SigmaChallengeGenerator scg = StandardNonInteractiveSigmaChallengeGenerator.getInstance(cs.getCommitmentFunction(), otherInput);
-		
-		PreimageProofGenerator spg = PreimageProofGenerator.getInstance(scg, cs.getCommitmentFunction());
+//		SigmaChallengeGenerator scg = StandardNonInteractiveSigmaChallengeGenerator.getInstance(cs.getCommitmentFunction(), otherInput);
+//		PreimageProofGenerator spg = PreimageProofGenerator.getInstance(scg, cs.getCommitmentFunction());
+		PreimageProofSystem pg = PreimageProofSystem.getInstance(cs.getCommitmentFunction(),otherInput);
 
-		me.setProofForXi(spg.generate(me.getXi(), me.getAi()));
+		me.setProofForXi(pg.generate(me.getXi(), me.getAi()));
 		
 		numberMessagesReceived++;
 		
@@ -120,7 +121,6 @@ public class SetupRoundAction extends AbstractAction {
 		
 		if(exclude){
 			Log.w(TAG, "Excluding participant "+senderParticipant.getIdentification()+" ("+sender+") because of a message processing problem.");
-			//TODO notify exclusion
 			poll.getExcludedParticipants().put(sender, senderParticipant);
 		}
 		

@@ -67,6 +67,7 @@ import android.os.Handler;
 import android.os.HandlerThread;
 import android.os.Message;
 import android.support.v4.content.LocalBroadcastManager;
+import android.util.Log;
 import android.widget.Toast;
 
 public class AllJoynNetworkInterface extends AbstractNetworkInterface{
@@ -176,9 +177,13 @@ public class AllJoynNetworkInterface extends AbstractNetworkInterface{
 
 	@Override
 	public void joinGroup(String groupName) {
+		Log.e("TAG", "group name "+groupName);
+		for(String s:this.listAvailableGroups()){
+			Log.e("TAG", "group name found"+s);
+		}
 		
 		if(!AndroidApplication.getInstance().isAdmin()){
-			if(this.listAvailableGroups().isEmpty()){
+			if(this.listAvailableGroups().isEmpty() || !this.listAvailableGroups().contains(groupName.replace("group",""))){
 				Intent intent = new Intent(BroadcastIntentTypes.networkConnectionFailed);
 				intent.putExtra("error", 5);
 				LocalBroadcastManager.getInstance(context).sendBroadcast(intent);

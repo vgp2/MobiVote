@@ -80,15 +80,18 @@ import ch.bfh.evoting.voterapp.hkrs12.util.xml.XMLParticipant;
 import ch.bfh.evoting.voterapp.hkrs12.util.xml.XMLPoll;
 import ch.bfh.evoting.voterapp.hkrs12.util.xml.XMLValidityProof;
 import ch.bfh.evoting.voterapp.hkrs12.util.xml.XMLZqElement;
-import ch.bfh.unicrypt.crypto.random.classes.PseudoRandomOracle;
-import ch.bfh.unicrypt.crypto.random.classes.ReferenceRandomByteSequence;
+import ch.bfh.unicrypt.helper.array.ByteArray;
+import ch.bfh.unicrypt.helper.hash.HashAlgorithm;
+//import ch.bfh.unicrypt.crypto.random.classes.PseudoRandomOracle;
+//import ch.bfh.unicrypt.crypto.random.classes.ReferenceRandomByteSequence;
 import ch.bfh.unicrypt.math.algebra.concatenative.classes.ByteArrayElement;
 import ch.bfh.unicrypt.math.algebra.concatenative.classes.ByteArrayMonoid;
 import ch.bfh.unicrypt.math.algebra.general.classes.FiniteByteArrayElement;
 import ch.bfh.unicrypt.math.algebra.general.classes.Tuple;
 import ch.bfh.unicrypt.math.algebra.general.interfaces.Element;
 import ch.bfh.unicrypt.math.algebra.multiplicative.classes.GStarModElement;
-import ch.bfh.unicrypt.math.helper.ByteArray;
+import ch.bfh.unicrypt.random.classes.PseudoRandomOracle;
+import ch.bfh.unicrypt.random.classes.ReferenceRandomByteSequence;
 
 /**
  * This class implements the HKRS12 protcol
@@ -298,34 +301,34 @@ public class HKRS12ProtocolInterface extends ProtocolInterface {
 
 			
 				//computes a generator depending on the text of the poll
-				String texts = poll.getQuestion();
-				Element[] representations = new Element[poll.getOptions().size()];
-				int i=0;
-				for(Option op:poll.getOptions()){
-					texts += op.getText();
-					representations[i]=((ProtocolOption)op).getRepresentation();
-					i++;
-				}
-
-				Tuple tuple = Tuple.getInstance(representations);
-				FiniteByteArrayElement representationsElement = tuple.getHashValue();
-				ByteArrayElement textElement = ByteArrayMonoid.getInstance().getElement(texts.getBytes());
-
-				ByteBuffer buffer = ByteBuffer.allocate(textElement.getValue().getLength()+representationsElement.getValue().getLength());
-				buffer.put(textElement.getValue().getAll());
-				buffer.put(representationsElement.getValue().getAll());
-				buffer.flip(); 
-
-				ProtocolPoll pp = (ProtocolPoll)poll;
-				
-				ReferenceRandomByteSequence rrs = PseudoRandomOracle.getInstance().getReferenceRandomByteSequence(ByteArray.getInstance(buffer.array()));//.getRandomReferenceString(buffer.array());
-				GStarModElement verificationGenerator = pp.getG_q().getIndependentGenerator(1, rrs);
-
-				if(!pp.getG_q().areEquivalent(pp.getGenerator(), verificationGenerator)){
-					LocalBroadcastManager.getInstance(context).sendBroadcast(new Intent(BroadcastIntentTypes.differentPolls));
-					Log.e(TAG, "There are some difference between the poll used by the admin and the one received");
-					return null;
-				}
+//				String texts = poll.getQuestion();
+//				Element[] representations = new Element[poll.getOptions().size()];
+//				int i=0;
+//				for(Option op:poll.getOptions()){
+//					texts += op.getText();
+//					representations[i]=((ProtocolOption)op).getRepresentation();
+//					i++;
+//				}
+//
+//				Tuple tuple = Tuple.getInstance(representations);
+//				ByteArray representationsElement = tuple.getByteArray();//.getHashValue();
+//				ByteArray textElement = ByteArray.getInstance(texts.getBytes());
+//
+//				ByteBuffer buffer = ByteBuffer.allocate(textElement.getLength()+representationsElement.getLength());
+//				buffer.put(textElement.getAll());
+//				buffer.put(representationsElement.getAll());
+//				buffer.flip(); 
+//
+//				ProtocolPoll pp = (ProtocolPoll)poll;
+//				PseudoRandomOracle.getInstance();
+//				ReferenceRandomByteSequence rrs = PseudoRandomOracle.getInstance().getReferenceRandomByteSequence(ByteArray.getInstance(buffer.array()));//.getRandomReferenceString(buffer.array());
+//				GStarModElement verificationGenerator = pp.getG_q().getIndependentGenerator(1, rrs);
+//
+//				if(!pp.getG_q().areEquivalent(pp.getGenerator(), verificationGenerator)){
+//					LocalBroadcastManager.getInstance(context).sendBroadcast(new Intent(BroadcastIntentTypes.differentPolls));
+//					Log.e(TAG, "There are some difference between the poll used by the admin and the one received");
+//					return null;
+//				}
 				
 
 				//Send a broadcast to start the review activity

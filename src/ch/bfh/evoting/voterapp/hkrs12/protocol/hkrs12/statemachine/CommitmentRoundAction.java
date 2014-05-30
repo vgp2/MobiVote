@@ -68,8 +68,10 @@ import ch.bfh.evoting.voterapp.hkrs12.protocol.hkrs12.ProtocolParticipant;
 import ch.bfh.evoting.voterapp.hkrs12.protocol.hkrs12.ProtocolPoll;
 import ch.bfh.evoting.voterapp.hkrs12.protocol.hkrs12.statemachine.StateMachineManager.Round;
 import ch.bfh.evoting.voterapp.hkrs12.util.BroadcastIntentTypes;
-import ch.bfh.unicrypt.crypto.proofgenerator.challengegenerator.interfaces.SigmaChallengeGenerator;
-import ch.bfh.unicrypt.crypto.proofgenerator.classes.ElGamalEncryptionValidityProofGenerator;
+import ch.bfh.unicrypt.crypto.proofsystem.challengegenerator.interfaces.SigmaChallengeGenerator;
+import ch.bfh.unicrypt.crypto.proofsystem.classes.ElGamalEncryptionValidityProofSystem;
+//import ch.bfh.unicrypt.crypto.proofgenerator.challengegenerator.interfaces.SigmaChallengeGenerator;
+//import ch.bfh.unicrypt.crypto.proofgenerator.classes.ElGamalEncryptionValidityProofGenerator;
 import ch.bfh.unicrypt.crypto.schemes.encryption.classes.ElGamalEncryptionScheme;
 import ch.bfh.unicrypt.math.algebra.general.classes.Subset;
 import ch.bfh.unicrypt.math.algebra.general.classes.Tuple;
@@ -138,7 +140,11 @@ public class CommitmentRoundAction extends AbstractAction {
 						for(Participant p:poll.getParticipants().values()){
 							if(!messagesReceived.containsKey(p.getUniqueId()) && !poll.getCompletelyExcludedParticipants().containsKey(p.getUniqueId())){
 								poll.getExcludedParticipants().put(p.getUniqueId(), p);
-								//TODO notify exclusion
+								//notify exclusion
+								LocalBroadcastManager.getInstance(AndroidApplication.getInstance())
+								.sendBroadcast(new Intent(BroadcastIntentTypes.proofVerificationFailed)
+									.putExtra("type", 2)
+									.putExtra("participant", p.getIdentification()));
 								Log.w(TAG, "Excluding "+p.getIdentification()+"("+p.getUniqueId()+") at end of voting period");
 							}
 						}
@@ -202,7 +208,6 @@ public class CommitmentRoundAction extends AbstractAction {
 		if(exclude){
 			Log.w(TAG, "Excluding participant "+senderParticipant.getIdentification()+" ("+sender+") because of a message processing problem.");
 			poll.getExcludedParticipants().put(sender, senderParticipant);
-			//TODO notify exclusion
 		} else {
 			Log.w(TAG, "Saving message for participant "+senderParticipant.getIdentification()+" ("+sender+").");
 		}
@@ -285,10 +290,11 @@ public class CommitmentRoundAction extends AbstractAction {
 		Tuple otherInput = Tuple.getInstance(me.getDataToHash(), poll.getDataToHash());
 
 		
-		SigmaChallengeGenerator scg = ElGamalEncryptionValidityProofGenerator.createNonInteractiveChallengeGenerator(ees, possibleVotes.length, otherInput);
+//		SigmaChallengeGenerator scg = ElGamalEncryptionValidityProofSystem.createNonInteractiveChallengeGenerator(ees, possibleVotes.length, otherInput);
 		Subset possibleVotesSet = Subset.getInstance(poll.getG_q(), possibleVotes);
-		ElGamalEncryptionValidityProofGenerator vpg = ElGamalEncryptionValidityProofGenerator.getInstance(
-				scg, ees, me.getHi(), possibleVotesSet);
+		ElGamalEncryptionValidityProofSystem vpg = //ElGamalEncryptionValidityProofSystem.getInstance(
+				//scg, ees, me.getHi(), possibleVotesSet);
+				ElGamalEncryptionValidityProofSystem.getInstance(ees, me.getHi(), possibleVotesSet, otherInput);
 
 		//simulate the ElGamal cipher text (a,b) = (ai,bi);
 		Tuple publicInput = Tuple.getInstance(me.getAi(), me.getBi());

@@ -125,7 +125,7 @@
     <string name="dialog_title_attack_detected">Attack detected</string>
     <string name="dialog_attack_impersonalization">An attack has been detected! Someone is trying to impersonate a group member in order to be able to vote in his name. We strongly recommend to interrupt the vote period and restart.</string>
     <string name="dialog_attack_different_senders">An attack has been detected! Someone has sent a message on behalf of another member of the group. We strongly recommand to interrupt the vote period and restart.</string>
-    <string name="dialog_attack_different_salts">An attack has been detected! Someone is block the vote. Create a new group and give the password only to people allowed to vote.</string>
+    <string name="dialog_attack_different_salts">An attack has been detected! Someone is blocking the vote. Create a new group and give the password only to people allowed to vote.</string>
     <string name="dialog_not_included_title">Not allowed to vote</string>
     <string name="dialog_not_included">You were not included in the electorate. You are not allowed to vote.</string>
     <string name="dialog_title_network_lost">Group connection lost</string>
@@ -150,8 +150,11 @@
     <string name="dialog_different_protocols">Your app is not using the same cryptographic protocol as the app of the administrator. The vote will be cancelled.</string>
     <string name="dialog_title_no_result">No result computed</string>
     <string name="dialog_no_result">You were the administrator and were not included in the electorate, so you did not participate to the vote. Thus, no result can be computed.</string>
-    <string name="dialog_title_proof_verification_failed">Participant misbehaved</string>
-    <string name="dialog_proof_verification_failed">Participant \"%1$s\" did not respect a step from the protocol. They will be excluded from the voting process.</string>
+    <string name="dialog_title_excluded">Participant excluded</string>
+    <string name="dialog_proof_verification_failed">Participant \"%1$s\" did not respect a step of the protocol. They will be excluded from the voting process.</string>
+    <string name="dialog_exclusion_time_out">Participant \"%1$s\" did not send a message in the foreseen time slot. They will be excluded from the voting process.</string>
+    <string name="dialog_exclusion_participant_left">Participant \"%1$s\" left the group. They will be excluded from the voting process.</string>
+    <string name="dialog_exclusion_default">Participant \"%1$s\" was excluded from the voting process.</string>
         
 
     <!-- Help overlays -->
@@ -159,7 +162,7 @@
     <string name="overlay_identification">Put your identification here&#8230;</string>
     <string name="overlay_network_option">&#8230; then choose a method to join the voting session.</string>
     <string name="overlay_review">Check the content&#8230;</string>
-    <string name="overlay_review_ok">&#8230; and press the button if you agree with it.</string>
+    <string name="overlay_review_ok">&#8230; and check the box if you agree with it.</string>
     <string name="overlay_previous_screen">Use this button to return to the previous screen.</string>
 
     <!-- Activity titles -->

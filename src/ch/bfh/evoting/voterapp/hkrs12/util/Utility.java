@@ -61,35 +61,7 @@ import android.widget.TextView;
  *
  */
 public class Utility {
-	
-	/**
-	 * Transform density pixel in pixel
-	 * @param ctx Android context
-	 * @param dp Density pixel to transform to pixels
-	 * @return
-	 * Source: http://stackoverflow.com/questions/5012840/android-specifying-pixel-units-like-sp-px-dp-without-using-xml/5012893#5012893
-	 */
-	public static int dp2px(Context ctx, int dp){
-		DisplayMetrics metrics = ctx.getResources().getDisplayMetrics();
-		float dp2 = (float)dp;
-		//float fpixels = metrics.density * dp2;
-		int pixels = (int) (metrics.density * dp2 + 0.5f);
-		return pixels;
-	}
-	
-	/**
-	 * This method converts device specific pixels to density independent pixels.
-	 * 
-	 * @param px A value in px (pixels) unit. Which we need to convert into db
-	 * @param context Context to get resources and device specific display metrics
-	 * @return A float value to represent dp equivalent to px value
-	 * Source: http://stackoverflow.com/questions/4605527/converting-pixels-to-dp-in-android
-	 */
-	public static float px2dp(Context context, float px){
-	    DisplayMetrics metrics = context.getResources().getDisplayMetrics();
-	    float dp = px / (metrics.densityDpi);
-	    return dp;
-	}
+
 	
 	/**
 	 * Configure Log4J to also log in LogCat

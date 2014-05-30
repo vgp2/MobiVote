@@ -258,6 +258,7 @@ public class BroadcastIntentTypes {
 	/**
 	 * Intent type sent when the verification of a proof failed
 	 * Extras:
+	 * - type: 1=False proof 2=not submitting on time 3=participant left
 	 * - participant: well-known name of the participant
 	 */
 	public static String proofVerificationFailed = "proofVerificationFailed";

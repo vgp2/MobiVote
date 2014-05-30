@@ -109,7 +109,6 @@ public class VotingRoundAction extends AbstractAction {
 
 		if(exclude){
 			Log.w(TAG, "Excluding participant "+senderParticipant.getIdentification()+" ("+sender+") because of a message processing problem.");
-			//TODO notify exclusion
 			poll.getExcludedParticipants().put(sender, senderParticipant);
 		}
 
