@@ -68,10 +68,7 @@ import ch.bfh.evoting.voterapp.hkrs12.protocol.hkrs12.ProtocolParticipant;
 import ch.bfh.evoting.voterapp.hkrs12.protocol.hkrs12.ProtocolPoll;
 import ch.bfh.evoting.voterapp.hkrs12.protocol.hkrs12.statemachine.StateMachineManager.Round;
 import ch.bfh.evoting.voterapp.hkrs12.util.BroadcastIntentTypes;
-import ch.bfh.unicrypt.crypto.proofsystem.challengegenerator.interfaces.SigmaChallengeGenerator;
 import ch.bfh.unicrypt.crypto.proofsystem.classes.ElGamalEncryptionValidityProofSystem;
-//import ch.bfh.unicrypt.crypto.proofgenerator.challengegenerator.interfaces.SigmaChallengeGenerator;
-//import ch.bfh.unicrypt.crypto.proofgenerator.classes.ElGamalEncryptionValidityProofGenerator;
 import ch.bfh.unicrypt.crypto.schemes.encryption.classes.ElGamalEncryptionScheme;
 import ch.bfh.unicrypt.math.algebra.general.classes.Subset;
 import ch.bfh.unicrypt.math.algebra.general.classes.Tuple;
@@ -290,11 +287,8 @@ public class CommitmentRoundAction extends AbstractAction {
 		Tuple otherInput = Tuple.getInstance(me.getDataToHash(), poll.getDataToHash());
 
 		
-//		SigmaChallengeGenerator scg = ElGamalEncryptionValidityProofSystem.createNonInteractiveChallengeGenerator(ees, possibleVotes.length, otherInput);
 		Subset possibleVotesSet = Subset.getInstance(poll.getG_q(), possibleVotes);
-		ElGamalEncryptionValidityProofSystem vpg = //ElGamalEncryptionValidityProofSystem.getInstance(
-				//scg, ees, me.getHi(), possibleVotesSet);
-				ElGamalEncryptionValidityProofSystem.getInstance(ees, me.getHi(), possibleVotesSet, otherInput);
+		ElGamalEncryptionValidityProofSystem vpg = ElGamalEncryptionValidityProofSystem.getInstance(ees, me.getHi(), possibleVotesSet, otherInput);
 
 		//simulate the ElGamal cipher text (a,b) = (ai,bi);
 		Tuple publicInput = Tuple.getInstance(me.getAi(), me.getBi());

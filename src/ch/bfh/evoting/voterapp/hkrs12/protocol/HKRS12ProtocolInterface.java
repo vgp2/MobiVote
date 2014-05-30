@@ -45,7 +45,6 @@ package ch.bfh.evoting.voterapp.hkrs12.protocol;
 import java.io.File;
 import java.io.Serializable;
 import java.math.BigInteger;
-import java.nio.ByteBuffer;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -80,18 +79,8 @@ import ch.bfh.evoting.voterapp.hkrs12.util.xml.XMLParticipant;
 import ch.bfh.evoting.voterapp.hkrs12.util.xml.XMLPoll;
 import ch.bfh.evoting.voterapp.hkrs12.util.xml.XMLValidityProof;
 import ch.bfh.evoting.voterapp.hkrs12.util.xml.XMLZqElement;
-import ch.bfh.unicrypt.helper.array.ByteArray;
-import ch.bfh.unicrypt.helper.hash.HashAlgorithm;
-//import ch.bfh.unicrypt.crypto.random.classes.PseudoRandomOracle;
-//import ch.bfh.unicrypt.crypto.random.classes.ReferenceRandomByteSequence;
-import ch.bfh.unicrypt.math.algebra.concatenative.classes.ByteArrayElement;
-import ch.bfh.unicrypt.math.algebra.concatenative.classes.ByteArrayMonoid;
-import ch.bfh.unicrypt.math.algebra.general.classes.FiniteByteArrayElement;
 import ch.bfh.unicrypt.math.algebra.general.classes.Tuple;
 import ch.bfh.unicrypt.math.algebra.general.interfaces.Element;
-import ch.bfh.unicrypt.math.algebra.multiplicative.classes.GStarModElement;
-import ch.bfh.unicrypt.random.classes.PseudoRandomOracle;
-import ch.bfh.unicrypt.random.classes.ReferenceRandomByteSequence;
 
 /**
  * This class implements the HKRS12 protcol

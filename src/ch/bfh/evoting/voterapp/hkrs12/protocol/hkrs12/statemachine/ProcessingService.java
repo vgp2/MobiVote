@@ -56,11 +56,6 @@ import ch.bfh.evoting.voterapp.hkrs12.util.BroadcastIntentTypes;
 import ch.bfh.unicrypt.crypto.proofsystem.classes.ElGamalEncryptionValidityProofSystem;
 import ch.bfh.unicrypt.crypto.proofsystem.classes.PreimageEqualityProofSystem;
 import ch.bfh.unicrypt.crypto.proofsystem.classes.PreimageProofSystem;
-//import ch.bfh.unicrypt.crypto.proofgenerator.challengegenerator.classes.StandardNonInteractiveSigmaChallengeGenerator;
-//import ch.bfh.unicrypt.crypto.proofgenerator.challengegenerator.interfaces.SigmaChallengeGenerator;
-//import ch.bfh.unicrypt.crypto.proofgenerator.classes.ElGamalEncryptionValidityProofGenerator;
-//import ch.bfh.unicrypt.crypto.proofgenerator.classes.PreimageEqualityProofGenerator;
-//import ch.bfh.unicrypt.crypto.proofgenerator.classes.PreimageProofGenerator;
 import ch.bfh.unicrypt.crypto.schemes.commitment.classes.StandardCommitmentScheme;
 import ch.bfh.unicrypt.crypto.schemes.encryption.classes.ElGamalEncryptionScheme;
 import ch.bfh.unicrypt.math.algebra.general.classes.Subset;
@@ -121,8 +116,6 @@ public class ProcessingService extends IntentService {
 			//Generator and index of the participant has also to be hashed in the proof
 			Tuple otherInput = Tuple.getInstance(senderParticipant.getDataToHash(), poll.getDataToHash());
 			
-//			SigmaChallengeGenerator scg = StandardNonInteractiveSigmaChallengeGenerator.getInstance(csSetup.getCommitmentFunction(), otherInput);
-
 			PreimageProofSystem spg = PreimageProofSystem.getInstance(csSetup.getCommitmentFunction(), otherInput);
 
 			//if proof is false, exclude participant
@@ -157,12 +150,9 @@ public class ProcessingService extends IntentService {
 			ElGamalEncryptionScheme ees = ElGamalEncryptionScheme.getInstance(poll.getGenerator());
 
 			Tuple otherInput2 = Tuple.getInstance(senderParticipant.getDataToHash(), poll.getDataToHash());
-			//SigmaChallengeGenerator scg2 = ElGamalEncryptionValidityProofGenerator.createNonInteractiveChallengeGenerator(ees, possibleVotes.length, otherInput2);
 			Subset possibleVotesSet = Subset.getInstance(poll.getG_q(), possibleVotes);
 
-			ElGamalEncryptionValidityProofSystem vpg = //ElGamalEncryptionValidityProofGenerator.getInstance(
-					//scg2, ees, message.getComplementaryValue(), possibleVotesSet);
-					ElGamalEncryptionValidityProofSystem.getInstance(ees, message.getComplementaryValue(), possibleVotesSet, otherInput2);
+			ElGamalEncryptionValidityProofSystem vpg = 	ElGamalEncryptionValidityProofSystem.getInstance(ees, message.getComplementaryValue(), possibleVotesSet, otherInput2);
 			//simulate the ElGamal cipher text (a,b) = (ai,bi);
 			Tuple publicInput = Tuple.getInstance(senderParticipant.getAi(), message.getValue());
 
@@ -188,11 +178,9 @@ public class ProcessingService extends IntentService {
 
 			Tuple otherInput3 = Tuple.getInstance(senderParticipant.getDataToHash(), poll.getDataToHash());
 
-			//SigmaChallengeGenerator scg3 = StandardNonInteractiveSigmaChallengeGenerator.getInstance(f3, otherInput3);
 
 			PreimageEqualityProofSystem piepg = PreimageEqualityProofSystem.getInstance(f3, otherInput3);
-					//.getInstance(scg3, f1,f2);
-
+					
 			Tuple publicInput3 = Tuple.getInstance(senderParticipant.getAi(), message.getValue());
 
 			if(!piepg.verify(message.getProof(), publicInput3)){

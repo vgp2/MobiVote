@@ -22,11 +22,11 @@
     <string name="join">Rejoindre</string>
 
     <!-- Activities -->
-    <string name="notification">Un scrutin est en cours. Appuyer pour l'afficher.</string>
+    <string name="notification">Un scrutin est en cours. Appuyer pour l\'afficher.</string>
     <string name="poll_archive">Archives</string>
     <string name="cast_votes">Votes reçus: %1$d of %2$d</string>
-    <string name="poll_start_time">Date de début</string>
-    <string name="number_voters">Electorat</string>
+    <string name="poll_start_time">Date</string>
+    <string name="number_voters">Nombre de participants</string>
     <string name="number_cast_votes">Votes reçus</string>
     <string name="participation">Participation</string>
     <string name="result_chart">Graphique</string>
@@ -48,9 +48,9 @@
     <string name="button_scan_nfc">Scanner un tag NFC</string>
     <string name="write_nfc_tag">Ecrire un tag NFC</string>
     <string name="put_nfc">Veuillez approchez un tag NFC de votre appareil&#8230;</string>
-    <string name="create_new_network">Utiliser le hotspot Android</string>
+    <string name="create_new_network">Utiliser le point d'accès Android</string>
     <string name="capture_qrcode">Scanner un QR-code</string>
-    <string name="join_network">Rejoindre l'électorat</string>
+    <string name="join_network">Rejoindre l\'électorat</string>
     <string name="group_password_desc">Mot de passe du groupe</string>
     <string name="group_name_desc">Numéro du groupe</string>
     <string name="recreate_network">Modifier</string>
@@ -76,45 +76,45 @@
     <string name="dialog_title_confirm_vote">Envoyez le vote?</string>
     <string name="dialog_confirm_vote">
 <![CDATA[
-			Vous avez choisi l'option suivante:<br /><br /><b>%1$s</b><br /><br />Confirmez-vous ce choix et désirez-vous envoyer le vote?
+			Vous avez choisi l\'option suivante:<br /><br /><b>%1$s</b><br /><br />Confirmez-vous ce choix et désirez-vous envoyer le vote?
 		]]>
     </string>
     <string name="dialog_title_save_poll">Enregistrer le scrutin?</string>
     <string name="dialog_save_poll">Voulez-vous enregistrer les modifications apportées à ce scrutin?</string>
     <string name="dialog_title_stop_poll">Terminer le scrutin?</string>
-    <string name="dialog_stop_poll">Certains participants n'ont pas encore envoyé leur vote. Voulez-vous vraiment terminer la période de vote?</string>
+    <string name="dialog_stop_poll">Certains participants n\'ont pas encore envoyé leur vote. Voulez-vous vraiment terminer la période de vote?</string>
     <string name="dialog_title_cancel_poll">Annuler le scrutin?</string>
     <string name="dialog_cancel_poll">Voulez-vous vraiment annuler le scrutin?</string>
-    <string name="dialog_title_add_option">Ajouter l'option?</string>
-    <string name="dialog_add_option">Une options est toujours en cours d'édition. Voulez-vous l'ajouter au scrutin?</string>
+    <string name="dialog_title_add_option">Ajouter l\'option?</string>
+    <string name="dialog_add_option">Une options est toujours en cours d\'édition. Voulez-vous l\'ajouter au scrutin?</string>
     <string name="dialog_title_back">Quitter?</string>
     <string name="dialog_back">En continuant, vous ne pourrez plus participer au scrutin. Voulez-vous vraiment continuer?</string>
     <string name="dialog_back_admin">En continuant, vous ne pourrez plus administrer le scrutin. Vous devrez redémarrer la procédure depuis le début. Voulez-vous vraiment continuer?</string>
     <string name="dialog_back_result">En continuant, vous ne verrez pas le résultat du scrutin. Voulez-vous vraiment continuer?</string>
-    <string name="dialog_title_access_point">Point d'accès Wi-Fi Android</string>
-    <string name="dialog_content_access_point">Le point d'accès Wi-Fi Android est déjà activé. Voulez-vous utiliser cette connexion?</string>
+    <string name="dialog_title_access_point">Point d\'accès Wi-Fi Android</string>
+    <string name="dialog_content_access_point">Le point d\'accès Wi-Fi Android est déjà activé. Voulez-vous utiliser cette connexion?</string>
     <string name="nfc_enable_nfc">Activer NFC?</string>
-    <string name="nfc_enable_nfc_question">Pour utiliser cette fonctionnalité, NFC doit être activé. Voulez-vous l'activer maintenant?</string>
+    <string name="nfc_enable_nfc_question">Pour utiliser cette fonctionnalité, NFC doit être activé. Voulez-vous l\'activer maintenant?</string>
 
     <!-- Error or Info Dialogs / Toast -->
-    <string name="toast_scroll">Veuillez d'abord regarder toutes les options.</string>
+    <string name="toast_scroll">Veuillez d\'abord regarder toutes les options.</string>
     <string name="toast_choose_one_option">Veuillez choisir une des options proposées.</string>
     <string name="toast_join_error_admin">Un groupe portant le même nom existe déjà. Veuillez choisir un autre nom.</string>
-    <string name="toast_join_error_voter">Aucun groupe ne porte le nom donné. Veuillez attendre que l'administrateur le crée.</string>
+    <string name="toast_join_error_voter">Aucun groupe ne porte le nom donné. Veuillez attendre que l\'administrateur le crée.</string>
     <string name="toast_join_error_invalid_name">Nom de groupe invalide. Veuillez choisir un autre nom.</string>
     <string name="toast_join_error">Impossible de créer/rejoindre le groupe</string>
     <string name="toast_join_error_voter_network">Impossible de rejoindre le groupe. Veuillez essayer de désactiver et réactiver le Wi-Fi.</string>
-    <string name="toast_join_error_no_groups">Aucun groupe disponible sur le réseau. Veuillez vous assurer que l'administrateur a bien créé un groupe et que le réseau supporte l'échange de messages multicast.</string>
+    <string name="toast_join_error_no_groups">Aucun groupe disponible sur le réseau. Veuillez vous assurer que l\'administrateur a bien créé un groupe et que le réseau supporte l\'échange de messages multicast.</string>
     <string name="toast_network_connection_error">Impossible de se connecter au réseau Wi-Fi.</string>
     <string name="toast_redo_impossible">Une erreur est survenue lors de la copie du scrutin.</string>
-    <string name="toast_wifi_is_not_connected">Vous n'êtes connecté à aucun résau Wi-Fi. Veuillez choisir une autre option.</string>
-    <string name="toast_wifi_is_disabled">Le Wi-Fi est désactivé. Veuillez d'abord l'activer.</string>
+    <string name="toast_wifi_is_not_connected">Vous n\'êtes connecté à aucun résau Wi-Fi. Veuillez choisir une autre option.</string>
+    <string name="toast_wifi_is_disabled">Le Wi-Fi est désactivé. Veuillez d\'abord l\'activer.</string>
     <string name="toast_network_lost">Vous avez été déconnecté du groupe.</string>
     <string name="toast_question_empty">Veuillez indiquer une question.</string>
     <string name="toast_not_enough_options">Veuillez indiquer au moins deux options.</string>
     <string name="toast_option_empty">Veuillez indiquer un texte pour cette option.</string>
     <string name="toast_not_enough_participant_selected">Veuillez sélectionner au moins deux participants.</string>
-    <string name="toast_not_everybody_accepted">Certains participants n'ont pas encore accepté le scrutin. Veuillez patienter or veuillez exclure de l'électorat les personnes concernées.</string>
+    <string name="toast_not_everybody_accepted">Certains participants n\'ont pas encore accepté le scrutin. Veuillez patienter ou veuillez exclure de l\'électorat les personnes concernées.</string>
     <string name="toast_nfc_tag_read_failed">Impossible de lire le tag NFC</string>
     <string name="toast_no_identification">Veuillez indiquer une identification.</string>
     <string name="toast_network_not_found_text">Réseau Wi-Fi \"%1$s\" non disponible.</string>
@@ -123,47 +123,47 @@
     <string name="toast_file_exported">Fichier exporté vers \"%1$s\".</string>
     <string name="toast_export_failed">Export impossible: fichier introuvable.</string>
     <string name="dialog_title_attack_detected">Attaque détectée</string>
-    <string name="dialog_attack_impersonalization">Une attaque a été détectée! Quelqu'un essaie d'impersonifier un membre du groupe pour voter à sa place. Nous vous conseillons vivement d'interrompre le scrutin et d'en créer un nouveau.</string>
-    <string name="dialog_attack_different_senders">Une attaque a été détectée! Quelqu'un a envoyé un message au nom d'un autre membre du groupe. Nous vous conseillons vivement d'interrompre le scrutin et d'en créer un nouveau.</string>
-    <string name="dialog_attack_different_salts">Une attaque a été détectée! Quelqu'un essaie de bloquer le scrutin. Veuillez créer un nouveau groupe et ne donnez le mot de passe qu'aux personnes autorisées à participer.</string>
+    <string name="dialog_attack_impersonalization">Une attaque a été détectée! Quelqu\'un essaie d\'impersonifier un membre du groupe pour voter à sa place. Nous vous conseillons vivement d\'interrompre le scrutin et d\'en créer un nouveau.</string>
+    <string name="dialog_attack_different_senders">Une attaque a été détectée! Quelqu\'un a envoyé un message au nom d\'un autre membre du groupe. Nous vous conseillons vivement d\'interrompre le scrutin et d\'en créer un nouveau.</string>
+    <string name="dialog_attack_different_salts">Une attaque a été détectée! Quelqu\'un essaie de bloquer le scrutin. Veuillez créer un nouveau groupe et ne donnez le mot de passe qu\'aux personnes autorisées à participer.</string>
     <string name="dialog_not_included_title">Pas autorisé à voter</string>
-    <string name="dialog_not_included">Vous n'êtes pas membre de l'électorat. Vous n'avez pas le droit de voter.</string>
+    <string name="dialog_not_included">Vous n\'êtes pas membre de l\'électorat. Vous n\'avez pas le droit de voter.</string>
     <string name="dialog_title_network_lost">Connexion au groupe interrompue</string>
     <string name="dialog_network_lost">La connexion au groupe a été interrompue. Vous ne pourrez pas voter.</string>
     <string name="dialog_title_wrong_key">Mauvais mot de passe de groupe</string>
-    <string name="dialog_wrong_key_pwd">Vous avez probablement entré un mauvais mot de passe de groupe. Veuillez le comparer avec un autre membre du groupe. S'ils ne correspondent pas, annulez et essayez de rejoindre le groupe. S'ils correspondent, il y a probablement un agresseur sur le réseau.</string>
-    <string name="dialog_nfc_write_failed">Impossible d'écrire le tag NFC</string>
+    <string name="dialog_wrong_key_pwd">Vous avez probablement entré un mauvais mot de passe de groupe. Veuillez le comparer avec un autre membre du groupe. S\'ils ne correspondent pas, annulez et essayez de rejoindre le groupe. S\'ils correspondent, il y a probablement un agresseur sur le réseau.</string>
+    <string name="dialog_nfc_write_failed">Impossible d\'écrire le tag NFC</string>
     <string name="dialog_nfc_readonly">Le tag NFC est en lecture seule.</string>
     <string name="dialog_nfc_not_enough_space">Espace insuffisant sur ce tag.</string>
     <string name="dialog_nfc_unable_format_ndef">Impossible de formater ce tag NFC en NDEF.</string>
     <string name="dialog_nfc_no_ndef_support">Ce tag ne supporte pas le format NDEF.</string>
     <string name="dialog_title_result_chart">Graphique</string>
     <string name="dialog_title_result_not_shown">Aucun résultat</string>
-    <string name="dialog_result_not_shown">Moins de trois votant on soumis un vote. Pour conserver la confidentialité des votes, le résultat n'est pas affiché.</string>
+    <string name="dialog_result_not_shown">Moins de trois votants on soumis un vote. Pour conserver la confidentialité des votes, le résultat n\'est pas affiché.</string>
     <string name="dialog_title_result_not_computed">Aucun résultat</string>
-    <string name="dialog_result_not_computed">L'application n'a pas été en mesure de calculer le résultat. Nous nous excusons des désagréments causés.</string>
+    <string name="dialog_result_not_computed">L\'application n\'a pas été en mesure de calculer le résultat. Nous nous excusons des désagréments causés.</string>
     <string name="dialog_title_poll_canceled">Scrutin annulé</string>
-    <string name="dialog_poll_canceled">L'administrateur a annulé le scrutin. Vous allez être redirigé vers l'écran principal.</string>
+    <string name="dialog_poll_canceled">L\'administrateur a annulé le scrutin. Vous allez être redirigé vers l\'écran principal.</string>
     <string name="dialog_title_different_polls">Contenus du scrutin différents</string>
-    <string name="dialog_different_polls">Il semble que le contenu du scrutin envoyé par l'administrateur et celui reçu pas votre appareil n'est pas identique. Le scrutin sera annulé.</string>
+    <string name="dialog_different_polls">Il semble que le contenu du scrutin envoyé par l\'administrateur et celui reçu pas votre appareil n\'est pas identique. Le scrutin sera annulé.</string>
     <string name="dialog_title_different_protocols">Protocoles différents</string>
-    <string name="dialog_different_protocols">Votre application n'utilise pas le même protocole que l'administrateur. Le scrutin sera annulé.</string>
+    <string name="dialog_different_protocols">Votre application n\'utilise pas le même protocole que l\'administrateur. Le scrutin sera annulé.</string>
     <string name="dialog_title_no_result">Aucun résultat</string>
-    <string name="dialog_no_result">Vous étiez administrateur mais n'étiez pas membre de l'électorat. Vous n'avez donc pas participé au vote et le résultat ne peut pas être calculé.</string>
+    <string name="dialog_no_result">Vous étiez administrateur mais n\'étiez pas membre de l\'électorat. Vous n\'avez donc pas participé au vote et le résultat ne peut pas être calculé.</string>
     <string name="dialog_title_excluded">Participant(e) exclu(e)</string>
-    <string name="dialog_proof_verification_failed">Le/la participant(e) \"%1$s\" n'a pas respecté une étape du protocole. Par conséquent, il/elle a été exclu(e) du scrutin.</string>
-    <string name="dialog_exclusion_time_out">Le/la participant(e) \"%1$s\" n'a pas envoyé son message dans le temps imparti. Par conséquent, il/elle a été exclu(e) du scrutin.</string>
+    <string name="dialog_proof_verification_failed">Le/la participant(e) \"%1$s\" n\'a pas respecté une étape du protocole. Par conséquent, il/elle a été exclu(e) du scrutin.</string>
+    <string name="dialog_exclusion_time_out">Le/la participant(e) \"%1$s\" n\'a pas envoyé son message dans le temps imparti. Par conséquent, il/elle a été exclu(e) du scrutin.</string>
     <string name="dialog_exclusion_participant_left">Le/la participant(e) \"%1$s\" a quitté le groupe. Par conséquent, il/elle a été exclu(e) du scrutin.</string>
     <string name="dialog_exclusion_default">Le/la participant(e) \"%1$s\" a été exclu(e) du scrutin..</string>
         
 
     <!-- Help overlays -->
-    <string name="overlay_close">Touchez l'écran pour fermer l'aide</string>
+    <string name="overlay_close">Touchez l\'écran pour fermer l\'aide</string>
     <string name="overlay_identification">Indique votre identification ici&#8230;</string>
     <string name="overlay_network_option">&#8230; et choisissez une méthode pour rejoindre le groupe.</string>
     <string name="overlay_review">Vérifiez le contenu&#8230;</string>
-    <string name="overlay_review_ok">&#8230; et cochez la case si vous l'accepter</string>
-    <string name="overlay_previous_screen">Utilisez ce bouton pour revenir à l'écran précédent.</string>
+    <string name="overlay_review_ok">&#8230; et cochez la case si vous l\'accepter</string>
+    <string name="overlay_previous_screen">Utilisez ce bouton pour revenir à l\'écran précédent.</string>
 
     <!-- Activity titles -->
     <string name="voter_app_app_name">MobiVote KSRH12</string>
@@ -173,20 +173,20 @@
     <string name="title_activity_list_terminated_polls">Archives</string>
     <string name="title_activity_display_result">Résultat</string>
     <string name="title_activity_network_informations">Information sur le réseau</string>
-    <string name="title_activity_create_network">Point d'accès Wi-Fi Android</string>
+    <string name="title_activity_create_network">Point d\'accès Wi-Fi Android</string>
     <string name="title_activity_poll">Administration du scrutin</string>
     <string name="title_activity_network_config">Configuration du réseau</string>
     <string name="title_activity_poll_detail">Création du scrutin</string>
-    <string name="title_activity_electorate">Sélection de l'électorat</string>
+    <string name="title_activity_electorate">Sélection de l\'électorat</string>
     <string name="title_activity_review_poll">Vérification du scrutin</string>
     <string name="title_activity_wait_for_votes_admin">Progression</string>
 
     <!-- Activity subtitles -->
     <string name="subtitle_welcome">Bienvenue dans MobiVote</string>
     <string name="subtitle_edition">Edition KSRH12</string>
-    <string name="subtitle_check_electorate">Veuillez patientert&#8230;</string>
-    <string name="subtitle_wait_votes">Merci d'avoir voté!\nEn attente d'autres votes&#8230;</string>
-    <string name="subtitle_wait_votes_admin">Merci d'avoir voté!\nEn attente d'autres votes&#8230;</string>
+    <string name="subtitle_check_electorate">Veuillez patienter&#8230;</string>
+    <string name="subtitle_wait_votes">Merci d\'avoir voté!\nEn attente d\'autres votes&#8230;</string>
+    <string name="subtitle_wait_votes_admin">Merci d\'avoir voté!\nEn attente d\'autres votes&#8230;</string>
 
     <!-- Hints in EditText fields -->
     <string name="hint_group_name">Numéro de groupe</string>
@@ -210,7 +210,7 @@
 
     <!-- Help dialog titles -->
     <string name="help_title_main">Bienvenue dans MobiVote</string>
-    <string name="help_title_electorate">Sélection de l'électorat</string>
+    <string name="help_title_electorate">Sélection de l\'électorat</string>
     <string name="help_title_review">Confirmation du scrutin</string>
     <string name="help_title_network_info">Informations du réseau</string>
     <string name="help_title_vote">Scrutin</string>

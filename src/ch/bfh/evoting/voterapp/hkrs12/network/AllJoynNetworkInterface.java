@@ -177,10 +177,6 @@ public class AllJoynNetworkInterface extends AbstractNetworkInterface{
 
 	@Override
 	public void joinGroup(String groupName) {
-		Log.e("TAG", "group name "+groupName);
-		for(String s:this.listAvailableGroups()){
-			Log.e("TAG", "group name found"+s);
-		}
 		
 		if(!AndroidApplication.getInstance().isAdmin()){
 			if(this.listAvailableGroups().isEmpty() || !this.listAvailableGroups().contains(groupName.replace("group",""))){

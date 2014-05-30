@@ -153,7 +153,6 @@ OnClickListener, TextWatcher {
 
 			@Override
 			public void onReceive(Context c, Intent intent) {
-				Log.e("tag", "Groups updated");
 				dataAdapter.clear();
 				List<String> list = AndroidApplication.getInstance().getNetworkInterface().listAvailableGroups();
 				if(list.isEmpty()){

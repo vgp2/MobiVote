@@ -149,17 +149,6 @@ public class AndroidApplication extends Application {
 		LocalBroadcastManager.getInstance(this).registerReceiver(resultComputationFailedReceiver, new IntentFilter(BroadcastIntentTypes.resultNotFound));
 		LocalBroadcastManager.getInstance(this).registerReceiver(proofVerificationFailedReceiver, new IntentFilter(BroadcastIntentTypes.proofVerificationFailed));
 
-		//register a broadcast receiver for updating the list when list of groups changed
-		BroadcastReceiver groupsBroadcastReceiver = new BroadcastReceiver() {
-
-			@Override
-			public void onReceive(Context c, Intent intent) {
-				Log.e("tag", "Groups updated andro");
-				
-			}
-		};
-		registerReceiver(groupsBroadcastReceiver, new IntentFilter(BroadcastIntentTypes.advertisedGroupChange));
-
 	}
 
 	@Override

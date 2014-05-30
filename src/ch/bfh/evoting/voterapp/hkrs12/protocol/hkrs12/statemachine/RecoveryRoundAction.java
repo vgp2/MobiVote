@@ -54,12 +54,7 @@ import ch.bfh.evoting.voterapp.hkrs12.protocol.hkrs12.ProtocolMessageContainer;
 import ch.bfh.evoting.voterapp.hkrs12.protocol.hkrs12.ProtocolParticipant;
 import ch.bfh.evoting.voterapp.hkrs12.protocol.hkrs12.ProtocolPoll;
 import ch.bfh.evoting.voterapp.hkrs12.protocol.hkrs12.statemachine.StateMachineManager.Round;
-import ch.bfh.unicrypt.crypto.proofsystem.challengegenerator.classes.StandardNonInteractiveSigmaChallengeGenerator;
-import ch.bfh.unicrypt.crypto.proofsystem.challengegenerator.interfaces.SigmaChallengeGenerator;
 import ch.bfh.unicrypt.crypto.proofsystem.classes.PreimageEqualityProofSystem;
-//import ch.bfh.unicrypt.crypto.proofgenerator.challengegenerator.classes.StandardNonInteractiveSigmaChallengeGenerator;
-//import ch.bfh.unicrypt.crypto.proofgenerator.challengegenerator.interfaces.SigmaChallengeGenerator;
-//import ch.bfh.unicrypt.crypto.proofgenerator.classes.PreimageEqualityProofGenerator;
 import ch.bfh.unicrypt.crypto.schemes.commitment.classes.StandardCommitmentScheme;
 import ch.bfh.unicrypt.math.algebra.general.classes.Tuple;
 import ch.bfh.unicrypt.math.algebra.general.interfaces.Element;
@@ -128,11 +123,8 @@ public class RecoveryRoundAction extends AbstractAction {
 		
 		Tuple otherInput3 = Tuple.getInstance(me.getDataToHash(), poll.getDataToHash());
 		
-		//SigmaChallengeGenerator scg = StandardNonInteractiveSigmaChallengeGenerator.getInstance(f, otherInput3);
-
 		PreimageEqualityProofSystem piepg = PreimageEqualityProofSystem.getInstance(f, otherInput3);
-				//.getInstance(scg, f1,f2);
-
+				
 		Tuple publicInput = Tuple.getInstance(me.getAi(), me.getHiHatPowXi());
 		me.setProofForHiHat(piepg.generate(me.getXi(), publicInput));
 		
