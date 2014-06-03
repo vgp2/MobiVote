@@ -45,10 +45,10 @@
     <string name="dialog_wait_wifi">Veuillez patienter&#8230;</string>
     <string name="button_use_actual_ssid">Utiliser le réseau \"%1$s\"</string>
     <string name="advance_network_config">Configuration avancée</string>
-    <string name="button_scan_nfc">Scanner un tag NFC</string>
+    <string name="button_scan_nfc">Lire un tag NFC</string>
     <string name="write_nfc_tag">Ecrire un tag NFC</string>
     <string name="put_nfc">Veuillez approchez un tag NFC de votre appareil&#8230;</string>
-    <string name="create_new_network">Utiliser le point d'accès Android</string>
+    <string name="create_new_network">Utiliser le point d\'accès Android</string>
     <string name="capture_qrcode">Scanner un QR-code</string>
     <string name="join_network">Rejoindre l\'électorat</string>
     <string name="group_password_desc">Mot de passe du groupe</string>
@@ -224,61 +224,60 @@
     <!-- Help dialog texts -->
     <string name="help_text_main">
 <![CDATA[
-			This app allows you to set up a vote between people using their smartphone. A Wi-Fi network is used for communication between smartphones.
+			Cette application permet d\'organiser un scrutin entre plusieurs personnes utilisant un smartphone ou une tablette. Un réseau Wi-Fi est utilisé pour la communication entre les appareils.
 			<br /><br />
-			In this screen, you have three options.
+			A ce stade, vous avez trois options:
 			<ul>
-			<li><b>Join electorate:</b> join a vote initiated by another person.</li>
-			<li><b>Votes:</b> set up your own vote.</li>
-			<li><b>Vote archive:</b> consult old votes in which you participated.</li>
+			<li><b>Rejoindre l\'électorat:</b> participer à un vote organisé par une autre personne.</li>
+			<li><b>Scrutins:</b> préparer votre propre scrutin.</li>
+			<li><b>Archives:</b> consulter les scrutins auxquels vous avez participé.</li>
 			</ul>
 			<br />
-			<b>About this app</b>
-			<br />This app was created in a Master thesis of a student affiliated to the e-voting research group at the Bern University of Applies Sciences (BFH)<br/> (see the <a href="http://e-voting.bfh.ch">website</a>).
+			<b>A propos de cette application</b>
+			<br />Cette application a été créée dans le cadre d\'une thèse de Master d\'un étudiant affilié au groupe de rechercher sur l\'e-voting à la Haute Ecole Spécialisée Bernoise (BFH)<br/> (voir le <a href="http://e-voting.bfh.ch">site web</a>).
 		]]>
     </string>
     <string name="help_text_poll">
 <![CDATA[
-			<b>In this screen you can create your own votes</b>. All the votes you have created (but which you didn\'t run) appear on this screen.
-			<b>This screen allows you to prepare a vote that will be run later</b>.
+			<b>Ici vous pouvez créer vos propres scrutins</b>. Tous les scrutins créés (mais qui n\'ont pas encore été réalisés) apparaissent dans la liste.
 			<br/><br/>
 			<ul>
-			<li>By clicking on one of the available votes, you will enter the editing screen, where you will be able to modify the vote or to run it.</li>
-			<li>With the button at the bottom of the list of available votes, you can define a new vote.</li>
-			<li>The trash icon allows you to delete a vote.</li>
+			<li>En cliquant sur un scrutin dans la liste, un écran s\'affiche où vous pouvez éditer ou démarrer le scrutin.</li>
+			<li>Le bouton au bas de la liste permet de créer un nouveau scrutin.</li>
+			<li>L\'icône repérsentant une poubelle permet de supprimer un scrutin.</li>
 			</ul>
 		]]>
     </string>
     <string name="help_text_poll_details">
 <![CDATA[
-			<b>In this screen you can define the properties of the vote.</b>
+			<b>Ici vous pouvez définir les propriétés du scrutin.</b>
 			<ul>
-			<li><b>Question:</b> this is the question to which the voter will have to answer.</li>
-			<li><b>Options:</b> this is the list of answers from which the voters will have to choose one. You can add an option by entering a text in the field at the bottom of the screen and save it by clicking the + button. You can remove an option by clicking on the corresponding trash icon.</li>
-			<li><b>Allow blank votes:</b> this checkbox adds or removes an option from the list which represents the "No opinion" vote</li>
+			<li><b>Question:</b> la question à laquelle les votants devront répondre.</li>
+			<li><b>Options:</b> la liste de réponse dont une devra être choisie par chaque votant. Vous pouvez ajouter une option en indiquant un texte au bas de l\'écran et en le validant avec le bouton +. Vous pouvez supprimer une option en cliquant sur l\'icône correspondante.</li>
+			<li><b>Autorise le vote blanc:</b> cette case à cocher ajoute ou supprime l\'option représentant le vote blanc.</li>
 			</ul>
-			When you have finished defining the vote, you can start the vote by clicking on the \"Start vote\" button.<br/>
-			When clicking on the back button, you will be able to save the vote.<br/>
-			When you save it, you will be able to access it again later in order to modify or run it.
+			Lorsque vous avez terminé de configurer le scrutin, vous pouvez le démarrer à l\'aide du bouton \"Démarrer le scrutin\".<br/>
+			En cliquant sur le bouton Retour, vous pourrez sauvegarder le scrutin.<br/>
+			Si vous le sauvegarder, vous pourrez y accéder plus tard pour le modifier ou le démarrer.
 		]]>
     </string>
     <string name="help_text_network_config">
 <![CDATA[
-			<b>In this screen you have to configure the way to connect to the vote session.</b>
+			<b>Ici vous pouvez configurer l\'accès à la session de vote.</b>
 			<br/><br/>
-			First, you have to enter your identification (for example your name). Then you have to choose which Wi-Fi network you want to use. Finally, you have to enter the group credentials.
+			Premièrement, vous devez indiquer votre identification (par exemple votre nom). Ensuite, vous devez choisir quel réseau Wi-Fi vous désirez utiliser. Enfin, vous devez entrer les données de connexion du groupe.
 			<ul>
-				<li><b>If you are the administrator of the vote</b>, you only have to choose the Wi-Fi network you want to use. 
-				For this purpose, you have two possibilities. Either you can use the curently connected Wi-Fi network (button \"Use network x\"), 
-				or you can choose the advanced network settings where you can choose the network you want to connect to. 
-				You also have the possibility to set up an access point on your device. This will work only with a vote with a few participants.</li>
-				<li><b>If you simply want to join an existing session</b>, you have four options:</li>
+				<li><b>Si vous être administrateur du scrutin</b>, vous devez uniquement choisir le réseau Wi-Fi à utiliser. 
+				Pour cela, vous avez deux possibilités. Soit vous utilisez le réseau auquel vous être actuellement connecté (boutton \"Utiliser le réseau x\"), 
+				soit vous choisissez les configurations avancées pour choisir un autre réseau. 
+				Vous avez également la possibilité d\'utiliser le point d\'accès de votre appareil. Cette solution ne supporte cependant que peu de participants.</li>
+				<li><b>Si vous désirer rejoindre une session de vote existante</b>, vous avez 4 possibilités:</li>
 				<ul>
-				<li><b>Scan QR-code:</b> with this option, you just have to scan the QR-code displayed on the administrator\'s device. After the scan, the connection will be set up automatically.</li>
-				<li><b>Scan NFC tag:</b> if your device support NFC technology, you can scan data saved on a NFC tag. After the scan, the connection will be set up automatically.</li>
-				<li><b>Use network x:</b> this option allows you to use the network to which you are currently connected.
-			 	When clicking on this button, you will have to enter the credentials of the voting session that have been defined on the administrator\'s device. If no group name is shown is the drop down list and the administrator already created the group, please verify that multicast is supported on the network you are connected to.</li>
-				<li><b>Advanced network setting:</b> this options allows you to select a different network. You will then have to enter the credentials of the vote session that have been defined on the administrator\'s device.</li>	
+				<li><b>Scanner un QR-code:</b> avec cette option, vous pouvez scanner le QR-code afficher sur l\'écran de l\'administrateur du scrutin. La connexion sera alors réalisée automatiquement.</li>
+				<li><b>Lire un tag NFC:</b> si votre appareil supporte la technologie NFC, vous pouvez lire les données sauvées sur un tag NFC. La connexion sera alors réalisée automatiquement.</li>
+				<li><b>Utiliser le réseau x:</b> cette option permet d\'utiliser le réseau auquel vous êtes actuellement connecté. Vous êtes alors invité a indiquer le mot de passe défini par l\'administrateur pour le groupe.
+				Si aucun groupe n\'est affiché dans la liste déroulante et que l\'administrateur a déjà créé le groupe, vérifier que le réseau auquel vous être connecté supporte l\'échange de message multicast. Le cas échéant, changez de réseau.</li>
+				<li><b>Configuration avancée:</b> cette option vous permet de choisir un autre réseau. Vous serez invité à indiquer le mot de passe du groupe défini par l\'utilisateur.</li>	
 				</ul>
 			</ul>
 			
@@ -286,85 +285,86 @@
     </string>
     <string name="help_text_network_info">
 <![CDATA[
-			<b>This screen displays the information about the vote session.</b>
+			<b>Ici, des informations à propos de la session de vote sont affichées.</b>
 			<ul>
-				<li><b>Network name:</b> the Wi-Fi network on which the vote session takes place.</li>
-				<li><b>Group number:</b> the name of the group.</li>
-				<li><b>Group password:</b> the password that must be shared among all members of the group.</li>
-				<li><b>QR-code:</b> the QR-code that can be scanned by people who want to join the group.</li>
-				<li><b>Write NFC tag:</b> if your device support NFC technology, this button will be displayed. It allows you to write the information on a NFC tag which can be scaned by other people.</li>
-				<li><b>Your identification:</b> the name which identifies you in the group.</li>
+				<li><b>Nom du réseau:</b> le réseau Wi-Fi utilisé pour la session de vote.</li>
+				<li><b>Numéro du groupe:</b> le nom du groupe.</li>
+				<li><b>Mot de passe du groupe:</b> le mot de passe qui doit être connu par tous les membres du groupe.</li>
+				<li><b>QR-code:</b> le QR-code qui peut être scanné par les personnes désirant rejoindre le groupe.</li>
+				<li><b>Ecrire un tag NFC:</b> si votre appareil supporte la technologie NFC, ce bouton sera affiché. Il permet d\'écrire les informations du groupe sur un tag NFC qui pourra être lu par les personnes désirant rejoindre le groupe.</li>
+				<li><b>Votre identification:</b> le nom vous identifiant au sein du groupe.</li>
 			</ul>
 		]]>
     </string>
     <string name="help_text_electorate_admin">
 <![CDATA[
-			In this screen, you as creator of the vote (also called administrator), <b>have to select the people that will have the right to vote</b>.  
+			Ici, l\'administrateur du vote, <b>peut choisir les personnes qui auront le droit de voter</b>.  
 			<br/><br/>
-			This screen shows you all the participants that are connected to the network session. Using the checkboxes on the right, you can select the participants that will be allowed to vote.
+			La liste affiche les personnes connectées à la session de vote. En utilisant les cases à cocher, vous pouvez inclure ou exclure des personnes de l\'électorat.
 		]]>
     </string>
     <string name="help_text_review_admin">
 <![CDATA[
-			<b>In this screen, you as administrator, have to wait until each participant agrees with the content of the vote and the electorate.</b>
-			<br/>Once each participant has accepted the content of the vote, you can start the voting period.
-			<br/><br/>If a participant does not agree with the content of the vote, you can go back to the editing screen using the back button.<br/>
-			If a participant does not accept the content of the vote in order to block the vote, you can go back and exclude them from the electorate.
+			<b>Ici, l\'administrateur du vote doit attendre jusqu\'à ce que chaque votant a accepté le contenu du scrutin et l\'électorat.</b>
+			<br/>Une fois que chaque participant a accepté le contenu du scrutin et l\'électorat, vous pouvez démarrer la pédriod de vote.
+			<br/><br/>Si un participant n\'accepte pas le contenu du vote ou l\'électorat, vous devez retourner à l\'écran de configuration du scrutin et le modifier.<br/>
+			Si un participant refuse d\'accepter le contenu juste pour bloquer le vote, vous pouvez l\'exclure de l\'électorat en retournant à l\'écran précédent.
 		]]>
     </string>
     <string name="help_text_electorate_voter">
 <![CDATA[
-			<b>In this screen you can see which participants of the group are included in the electorate by the administrator of the vote.</b>
-			Once the administrator has selected all the participants he wants, you will be redirected to the next screen. 
+			<b>Ici, vous pouvez voir quels participants sont ajoutés à l\'électortat par l\'administrateur du scrutin.</b>
+			Un fois que l\'administrateur a choisit les participants qu\'il désire inclure dans l\'électorat, vous êtes redirigés vers l\'écran suivant. 
 		]]>
     </string>
     <string name="help_text_review_voter">
 <![CDATA[
-			<b>In this screen you have to check whether the content of the vote is correct.</b> If you agree with it, you can click the red tick button next to your name in the list of the participants.
+			<b>Ici, vous devez vérifier si le contenu du vote est correct.</b> Si c\'est le cas, vous pouvez l\'accepter en cliquant la case à cocher correspondant à votre nom dans la liste des participants.
 			<br/><br/>
-			You especially have to check the following things:
+			Vous devez vérifier les choses suivantes:
 			<ul>
-				<li>Is the question correct?</li>
-				<li>Does the list of options contain all options?</li>
-				<li>Is every person that has the right to vote in the participant list?</li>
-				<li>Does someone without right to vote appear in the list?</li>
-				<li>Double check your screen with the one of another voter to control that the list of chars under your name is the same on both devices.</li>
+				<li>La question est-elle correcte?</li>
+				<li>Est-ce que la liste d\'options contient toutes les options?</li>
+				<li>Est-ce que toutes les personnes ayant le droit de vote apparaissent dans l\'électorat?</li>
+				<li>Est-ce qu\'un personne qui n\'aurait pas le droit de vote apparaît dans l\'électorat?</li>
+				<li>Comparer les caractères apparaissant sous votre nom sur votre écran, avec ceux apparaissant sous votre nom sur l\'écran de votre voisin.</li>
 			</ul>
-			If one of these conditions is not fulfilled, you should not accept the review and ask the administrator of the vote to modify it. If the list of chars under your name is different on another device, you are victim of an impersonation attack and should ask the administrator to create a new network in order to run the election.
+			Si une de ces condition n\'est pas remplies, vous ne devriez pas accepté le contenu du vote et vous devriez demander à l\'administrateur de le modifier. Si les caractères sous votre nom sont différents chez un autre votant, vous êtse victime d\'une attaque d\'impersonification. Vous devrez demander à l\'administrateur de créer une nouvelle session de vote.
 		]]>
     </string>
     <string name="help_text_vote">
 <![CDATA[
-			<b>In this screen you have to select the option you want to vote for.</b> When selecting an option, a dialog will be shown asking you to confirm your choice.
+			<b>Ici, vous pouvez choisir l\'option pour laquelle vous désirez voter</b> Une confirmation vous sera demandée une fois votre choix effectué.
 		]]>
     </string>
     <string name="help_text_wait_admin">
 <![CDATA[
-			<b>This screen shows the progress of the vote.</b> In the list of participants you can see who has not voted yet.
-			 If someone is not voting (because of a phone problem, boycott or another reason), you as administrator of the vote can decide to end the voting period by pressing on the "Finish vote" button.
-			<br/><br/>Once everybody has voted, you will be redirected to the result screen.
+			<b>Cet écran affiche la progession du scrutin.</b> Dans la liste, vous pouvez voir quels participants n\'ont pas encore voté.
+			 Si quelqu\'un ne vote pas (en raison d\'un problème technique, pour boycotter ou pour toute autre raison), l\'administrateur du vote peut décider de terminer la période de vote en pressant sur le bouton \"Terminer le vote\"
+			 
+			<br/><br/>Une fois que tous les participants ont voté, vous allez être redirigé vers l\'écran de résultat.
 		]]>
     </string>
     <string name="help_text_wait_voter">
 <![CDATA[
-			<b>This screen shows the progress of the vote.</b> In the list of participants you can see who has not voted yet.
-			<br/><br/>Once everybody has voted, you will be redirected to the result screen.
+			<b>Cet écran affiche la progession du scrutin</b> Dans la liste, vous pouvez voir quels participants n\'ont pas encore voté.
+			<br/><br/>Une fois que tous les participants ont voté, vous allez être redirigé vers l\'écran de résultat.
 		]]>
     </string>
     <string name="help_text_display_results">
 <![CDATA[
-			<b>This screen displays the result of the vote</b>
+			<b>Ici, le résultat du scrutin est affiché.</b>
 			<br/><br/>
-			If you were the administrator of this vote and the vote just finished, you can redo the vote by clicking on the "Redo vote" button.
+			Si vous étiez l\'administrateur du scrutin, et que le scrutin vient juste de se terminer, vous avez la possibilité de répéter le scrutin avec le bouton \"Répéter le scrutin\".
 			<br/><br/>
-			If you access this screen through the vote archive, you can clone this vote in order to run it again later.
+			Si vous accéder à cet écran au travers des archives, vous pouvez copier le scrutin pour le répéter plus tard.
 		]]>
     </string>
     <string name="help_text_archive">
 <![CDATA[
-			<b>This screen shows a list of all votes to which you participated</b>
+			<b>Cet écran affiche la liste de tous les scrutins auxquels vous avez participé.</b>
 			<br/><br/>
-			When you select a vote in the list, you will be redirected to the screen displaying the result of this vote.
+			Lorsque vous choisissez un scrutin dans la liste, son résultat est affiché.
 		]]>
     </string>
 

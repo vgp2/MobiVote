@@ -341,7 +341,7 @@
     <string name="help_text_wait_admin">
 <![CDATA[
 			<b>This screen shows the progress of the vote.</b> In the list of participants you can see who has not voted yet.
-			 If someone is not voting (because of a phone problem, boycott or another reason), you as administrator of the vote can decide to end the voting period by pressing on the "Finish vote" button.
+			 If someone is not voting (because of a phone problem, boycott or another reason), you as administrator of the vote can decide to end the voting period by pressing on the \"Finish vote\" button.
 			<br/><br/>Once everybody has voted, you will be redirected to the result screen.
 		]]>
     </string>
@@ -355,7 +355,7 @@
 <![CDATA[
 			<b>This screen displays the result of the vote</b>
 			<br/><br/>
-			If you were the administrator of this vote and the vote just finished, you can redo the vote by clicking on the "Redo vote" button.
+			If you were the administrator of this vote and the vote just finished, you can redo the vote by clicking on the \"Redo vote\" button.
 			<br/><br/>
 			If you access this screen through the vote archive, you can clone this vote in order to run it again later.
 		]]>
