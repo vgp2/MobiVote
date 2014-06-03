@@ -1,0 +1,371 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Common words -->
+    <string name="ok">OK</string>
+    <string name="cancel">Annuler</string>
+    <string name="yes">Oui</string>
+    <string name="no">Non</string>
+    <string name="add">Ajouter</string>
+    <string name="close">Fermer</string>
+    <string name="help">Aide</string>
+    <string name="content">Contenu</string>
+    <string name="description">Description</string>
+    <string name="identification">Votre identification</string>
+    <string name="polls">Scrutins</string>
+    <string name="question">Question</string>
+    <string name="options">Options</string>
+    <string name="participants">Participants</string>
+    <string name="vote_singular">vote</string>
+    <string name="vote_plural">votes</string>
+    <string name="empty_vote">Vote blanc</string>
+    <string name="join">Rejoindre</string>
+
+    <!-- Activities -->
+    <string name="notification">Un scrutin est en cours. Appuyer pour l\'afficher.</string>
+    <string name="poll_archive">Archives</string>
+    <string name="cast_votes">Votes reçus: %1$d of %2$d</string>
+    <string name="poll_start_time">Date</string>
+    <string name="number_voters">Nombre de participants</string>
+    <string name="number_cast_votes">Votes reçus</string>
+    <string name="participation">Participation</string>
+    <string name="result_chart">Graphique</string>
+    <string name="archived_votes">Scrutins archivés</string>
+    <string name="no_archived_votes">Aucun scrutin archivé</string>
+    <string name="no_votes">Aucun scrutin</string>
+    <string name="no_options">Aucune option</string>
+    <string name="allow_empty_vote">Autoriser le vote blanc</string>
+
+    <!-- Network -->
+    <string name="network_name">Nom du réseau</string>
+    <string name="network_info">Information du réseau</string>
+    <string name="network_wlan_key">Clé Wi-Fi</string>
+    <string name="not_connected">Aucun réseau configuré</string>
+    <string name="networks">Connexion réseau</string>
+    <string name="dialog_wait_wifi">Veuillez patienter&#8230;</string>
+    <string name="button_use_actual_ssid">Utiliser le réseau \"%1$s\"</string>
+    <string name="advance_network_config">Configuration avancée</string>
+    <string name="button_scan_nfc">Lire un tag NFC</string>
+    <string name="write_nfc_tag">Ecrire un tag NFC</string>
+    <string name="put_nfc">Veuillez approchez un tag NFC de votre appareil&#8230;</string>
+    <string name="create_new_network">Utiliser le point d\'accès Android</string>
+    <string name="capture_qrcode">Scanner un QR-code</string>
+    <string name="join_network">Rejoindre l\'électorat</string>
+    <string name="group_password_desc">Mot de passe du groupe</string>
+    <string name="group_name_desc">Numéro du groupe</string>
+    <string name="recreate_network">Modifier</string>
+    <string name="join_group_title">Rejoindre le groupe</string>
+    <string name="wpa_secure">Réseau sécurisé WPA</string>
+    <string name="wep_secure">Réseau sécurisé WEP</string>
+    <string name="unsecure">Réseau non-sécurisé </string>
+    <string name="no_group_available">Aucun groupe disponible</string>
+    
+
+    <!-- Action bar titles -->
+    <string name="action_redo_poll">Répéter le scrutin</string>
+    <string name="action_clone_poll">Copier le scrutin</string>
+    <string name="action_create_poll">Créer un nouveau scrutin</string>
+    <string name="action_start_poll">Démarrer le scrutin</string>
+    <string name="action_next">Suivant</string>
+    <string name="action_stop_poll">Terminer le scrutin</string>
+    <string name="action_cancel_poll">Annuler le scrutin</string>
+    <string name="action_start_poll_period">Démarrer la période de vote</string>
+    <string name="action_export">Exporter</string>
+
+    <!-- Question Dialogs -->
+    <string name="dialog_title_confirm_vote">Envoyez le vote?</string>
+    <string name="dialog_confirm_vote">
+<![CDATA[
+			Vous avez choisi l\'option suivante:<br /><br /><b>%1$s</b><br /><br />Confirmez-vous ce choix et désirez-vous envoyer le vote?
+		]]>
+    </string>
+    <string name="dialog_title_save_poll">Enregistrer le scrutin?</string>
+    <string name="dialog_save_poll">Voulez-vous enregistrer les modifications apportées à ce scrutin?</string>
+    <string name="dialog_title_stop_poll">Terminer le scrutin?</string>
+    <string name="dialog_stop_poll">Certains participants n\'ont pas encore envoyé leur vote. Voulez-vous vraiment terminer la période de vote?</string>
+    <string name="dialog_title_cancel_poll">Annuler le scrutin?</string>
+    <string name="dialog_cancel_poll">Voulez-vous vraiment annuler le scrutin?</string>
+    <string name="dialog_title_add_option">Ajouter l\'option?</string>
+    <string name="dialog_add_option">Une options est toujours en cours d\'édition. Voulez-vous l\'ajouter au scrutin?</string>
+    <string name="dialog_title_back">Quitter?</string>
+    <string name="dialog_back">En continuant, vous ne pourrez plus participer au scrutin. Voulez-vous vraiment continuer?</string>
+    <string name="dialog_back_admin">En continuant, vous ne pourrez plus administrer le scrutin. Vous devrez redémarrer la procédure depuis le début. Voulez-vous vraiment continuer?</string>
+    <string name="dialog_back_result">En continuant, vous ne verrez pas le résultat du scrutin. Voulez-vous vraiment continuer?</string>
+    <string name="dialog_title_access_point">Point d\'accès Wi-Fi Android</string>
+    <string name="dialog_content_access_point">Le point d\'accès Wi-Fi Android est déjà activé. Voulez-vous utiliser cette connexion?</string>
+    <string name="nfc_enable_nfc">Activer NFC?</string>
+    <string name="nfc_enable_nfc_question">Pour utiliser cette fonctionnalité, NFC doit être activé. Voulez-vous l\'activer maintenant?</string>
+
+    <!-- Error or Info Dialogs / Toast -->
+    <string name="toast_scroll">Veuillez d\'abord regarder toutes les options.</string>
+    <string name="toast_choose_one_option">Veuillez choisir une des options proposées.</string>
+    <string name="toast_join_error_admin">Un groupe portant le même nom existe déjà. Veuillez choisir un autre nom.</string>
+    <string name="toast_join_error_voter">Aucun groupe ne porte le nom donné. Veuillez attendre que l\'administrateur le crée.</string>
+    <string name="toast_join_error_invalid_name">Nom de groupe invalide. Veuillez choisir un autre nom.</string>
+    <string name="toast_join_error">Impossible de créer/rejoindre le groupe</string>
+    <string name="toast_join_error_voter_network">Impossible de rejoindre le groupe. Veuillez essayer de désactiver et réactiver le Wi-Fi.</string>
+    <string name="toast_join_error_no_groups">Aucun groupe disponible sur le réseau. Veuillez vous assurer que l\'administrateur a bien créé un groupe et que le réseau supporte l\'échange de messages multicast.</string>
+    <string name="toast_network_connection_error">Impossible de se connecter au réseau Wi-Fi.</string>
+    <string name="toast_redo_impossible">Une erreur est survenue lors de la copie du scrutin.</string>
+    <string name="toast_wifi_is_not_connected">Vous n\'êtes connecté à aucun résau Wi-Fi. Veuillez choisir une autre option.</string>
+    <string name="toast_wifi_is_disabled">Le Wi-Fi est désactivé. Veuillez d\'abord l\'activer.</string>
+    <string name="toast_network_lost">Vous avez été déconnecté du groupe.</string>
+    <string name="toast_question_empty">Veuillez indiquer une question.</string>
+    <string name="toast_not_enough_options">Veuillez indiquer au moins deux options.</string>
+    <string name="toast_option_empty">Veuillez indiquer un texte pour cette option.</string>
+    <string name="toast_not_enough_participant_selected">Veuillez sélectionner au moins deux participants.</string>
+    <string name="toast_not_everybody_accepted">Certains participants n\'ont pas encore accepté le scrutin. Veuillez patienter ou veuillez exclure de l\'électorat les personnes concernées.</string>
+    <string name="toast_nfc_tag_read_failed">Impossible de lire le tag NFC</string>
+    <string name="toast_no_identification">Veuillez indiquer une identification.</string>
+    <string name="toast_network_not_found_text">Réseau Wi-Fi \"%1$s\" non disponible.</string>
+    <string name="toast_content_connect_failed">Connexion au réseau Wi-Fi impossible.</string>
+    <string name="toast_nfc_write_success">Tag NFC écrit avec succès.</string>
+    <string name="toast_file_exported">Fichier exporté vers \"%1$s\".</string>
+    <string name="toast_export_failed">Export impossible: fichier introuvable.</string>
+    <string name="dialog_title_attack_detected">Attaque détectée</string>
+    <string name="dialog_attack_impersonalization">Une attaque a été détectée! Quelqu\'un essaie d\'impersonifier un membre du groupe pour voter à sa place. Nous vous conseillons vivement d\'interrompre le scrutin et d\'en créer un nouveau.</string>
+    <string name="dialog_attack_different_senders">Une attaque a été détectée! Quelqu\'un a envoyé un message au nom d\'un autre membre du groupe. Nous vous conseillons vivement d\'interrompre le scrutin et d\'en créer un nouveau.</string>
+    <string name="dialog_attack_different_salts">Une attaque a été détectée! Quelqu\'un essaie de bloquer le scrutin. Veuillez créer un nouveau groupe et ne donnez le mot de passe qu\'aux personnes autorisées à participer.</string>
+    <string name="dialog_not_included_title">Pas autorisé à voter</string>
+    <string name="dialog_not_included">Vous n\'êtes pas membre de l\'électorat. Vous n\'avez pas le droit de voter.</string>
+    <string name="dialog_title_network_lost">Connexion au groupe interrompue</string>
+    <string name="dialog_network_lost">La connexion au groupe a été interrompue. Vous ne pourrez pas voter.</string>
+    <string name="dialog_title_wrong_key">Mauvais mot de passe de groupe</string>
+    <string name="dialog_wrong_key_pwd">Vous avez probablement entré un mauvais mot de passe de groupe. Veuillez le comparer avec un autre membre du groupe. S\'ils ne correspondent pas, annulez et essayez de rejoindre le groupe. S\'ils correspondent, il y a probablement un agresseur sur le réseau.</string>
+    <string name="dialog_nfc_write_failed">Impossible d\'écrire le tag NFC</string>
+    <string name="dialog_nfc_readonly">Le tag NFC est en lecture seule.</string>
+    <string name="dialog_nfc_not_enough_space">Espace insuffisant sur ce tag.</string>
+    <string name="dialog_nfc_unable_format_ndef">Impossible de formater ce tag NFC en NDEF.</string>
+    <string name="dialog_nfc_no_ndef_support">Ce tag ne supporte pas le format NDEF.</string>
+    <string name="dialog_title_result_chart">Graphique</string>
+    <string name="dialog_title_result_not_shown">Aucun résultat</string>
+    <string name="dialog_result_not_shown">Moins de trois votants on soumis un vote. Pour conserver la confidentialité des votes, le résultat n\'est pas affiché.</string>
+    <string name="dialog_title_result_not_computed">Aucun résultat</string>
+    <string name="dialog_result_not_computed">L\'application n\'a pas été en mesure de calculer le résultat. Nous nous excusons des désagréments causés.</string>
+    <string name="dialog_title_poll_canceled">Scrutin annulé</string>
+    <string name="dialog_poll_canceled">L\'administrateur a annulé le scrutin. Vous allez être redirigé vers l\'écran principal.</string>
+    <string name="dialog_title_different_polls">Contenus du scrutin différents</string>
+    <string name="dialog_different_polls">Il semble que le contenu du scrutin envoyé par l\'administrateur et celui reçu pas votre appareil n\'est pas identique. Le scrutin sera annulé.</string>
+    <string name="dialog_title_different_protocols">Protocoles différents</string>
+    <string name="dialog_different_protocols">Votre application n\'utilise pas le même protocole que l\'administrateur. Le scrutin sera annulé.</string>
+    <string name="dialog_title_no_result">Aucun résultat</string>
+    <string name="dialog_no_result">Vous étiez administrateur mais n\'étiez pas membre de l\'électorat. Vous n\'avez donc pas participé au vote et le résultat ne peut pas être calculé.</string>
+    <string name="dialog_title_excluded">Participant(e) exclu(e)</string>
+    <string name="dialog_proof_verification_failed">Le/la participant(e) \"%1$s\" n\'a pas respecté une étape du protocole. Par conséquent, il/elle a été exclu(e) du scrutin.</string>
+    <string name="dialog_exclusion_time_out">Le/la participant(e) \"%1$s\" n\'a pas envoyé son message dans le temps imparti. Par conséquent, il/elle a été exclu(e) du scrutin.</string>
+    <string name="dialog_exclusion_participant_left">Le/la participant(e) \"%1$s\" a quitté le groupe. Par conséquent, il/elle a été exclu(e) du scrutin.</string>
+    <string name="dialog_exclusion_default">Le/la participant(e) \"%1$s\" a été exclu(e) du scrutin..</string>
+        
+
+    <!-- Help overlays -->
+    <string name="overlay_close">Touchez l\'écran pour fermer l\'aide</string>
+    <string name="overlay_identification">Indique votre identification ici&#8230;</string>
+    <string name="overlay_network_option">&#8230; et choisissez une méthode pour rejoindre le groupe.</string>
+    <string name="overlay_review">Vérifiez le contenu&#8230;</string>
+    <string name="overlay_review_ok">&#8230; et cochez la case si vous l\'accepter</string>
+    <string name="overlay_previous_screen">Utilisez ce bouton pour revenir à l\'écran précédent.</string>
+
+    <!-- Activity titles -->
+    <string name="voter_app_app_name">MobiVote KSRH12</string>
+    <string name="title_activity_check_electorate">Electorat</string>
+    <string name="title_activity_wait_for_votes">Progression</string>
+    <string name="title_activity_vote">Scrutin</string>
+    <string name="title_activity_list_terminated_polls">Archives</string>
+    <string name="title_activity_display_result">Résultat</string>
+    <string name="title_activity_network_informations">Information sur le réseau</string>
+    <string name="title_activity_create_network">Point d\'accès Wi-Fi Android</string>
+    <string name="title_activity_poll">Administration du scrutin</string>
+    <string name="title_activity_network_config">Configuration du réseau</string>
+    <string name="title_activity_poll_detail">Création du scrutin</string>
+    <string name="title_activity_electorate">Sélection de l\'électorat</string>
+    <string name="title_activity_review_poll">Vérification du scrutin</string>
+    <string name="title_activity_wait_for_votes_admin">Progression</string>
+
+    <!-- Activity subtitles -->
+    <string name="subtitle_welcome">Bienvenue dans MobiVote</string>
+    <string name="subtitle_edition">Edition KSRH12</string>
+    <string name="subtitle_check_electorate">Veuillez patienter&#8230;</string>
+    <string name="subtitle_wait_votes">Merci d\'avoir voté!\nEn attente d\'autres votes&#8230;</string>
+    <string name="subtitle_wait_votes_admin">Merci d\'avoir voté!\nEn attente d\'autres votes&#8230;</string>
+
+    <!-- Hints in EditText fields -->
+    <string name="hint_group_name">Numéro de groupe</string>
+    <string name="hint_group_password">Mot de passe de groupe</string>
+    <string name="hint_network_wlan_key">Clé Wi-Fi</string>
+    <string name="hint_enter_question">Indiquez la question du scrutin ici</string>
+    <string name="hint_enter_option">Indiquez les options ici</string>
+    <string name="hint_identification">Identification</string>
+
+    <!-- Image descriptions -->
+    <string name="description_participant_included">Participants inclus</string>
+    <string name="description_network">Réseau</string>
+    <string name="description_participant_avatar">Avatar du participant</string>
+    <string name="description_accepted">Confirmation reçue</string>
+    <string name="description_poll">Scrutin</string>
+    <string name="description_delete_poll">Efface le scrutin</string>
+    <string name="description_option">Option</string>
+    <string name="description_add_option">Ajouter une option</string>
+    <string name="description_qrcode">QR-code</string>
+    <string name="description_cast">Vote envoyé</string>
+
+    <!-- Help dialog titles -->
+    <string name="help_title_main">Bienvenue dans MobiVote</string>
+    <string name="help_title_electorate">Sélection de l\'électorat</string>
+    <string name="help_title_review">Confirmation du scrutin</string>
+    <string name="help_title_network_info">Informations du réseau</string>
+    <string name="help_title_vote">Scrutin</string>
+    <string name="help_title_wait">Progression</string>
+    <string name="help_title_display_results">Résultat</string>
+    <string name="help_title_archive">Archives</string>
+    <string name="help_title_network_config">Configuration du réseau</string>
+    <string name="help_title_poll">Administration du scrutin</string>
+    <string name="help_title_poll_details">Création du scrutin</string>
+
+    <!-- Help dialog texts -->
+    <string name="help_text_main">
+<![CDATA[
+			Cette application permet d\'organiser un scrutin entre plusieurs personnes utilisant un smartphone ou une tablette. Un réseau Wi-Fi est utilisé pour la communication entre les appareils.
+			<br /><br />
+			A ce stade, vous avez trois options:
+			<ul>
+			<li><b>Rejoindre l\'électorat:</b> participer à un vote organisé par une autre personne.</li>
+			<li><b>Scrutins:</b> préparer votre propre scrutin.</li>
+			<li><b>Archives:</b> consulter les scrutins auxquels vous avez participé.</li>
+			</ul>
+			<br />
+			<b>A propos de cette application</b>
+			<br />Cette application a été créée dans le cadre d\'une thèse de Master d\'un étudiant affilié au groupe de rechercher sur l\'e-voting à la Haute Ecole Spécialisée Bernoise (BFH)<br/> (voir le <a href="http://e-voting.bfh.ch">site web</a>).
+		]]>
+    </string>
+    <string name="help_text_poll">
+<![CDATA[
+			<b>Ici vous pouvez créer vos propres scrutins</b>. Tous les scrutins créés (mais qui n\'ont pas encore été réalisés) apparaissent dans la liste.
+			<br/><br/>
+			<ul>
+			<li>En cliquant sur un scrutin dans la liste, un écran s\'affiche où vous pouvez éditer ou démarrer le scrutin.</li>
+			<li>Le bouton au bas de la liste permet de créer un nouveau scrutin.</li>
+			<li>L\'icône repérsentant une poubelle permet de supprimer un scrutin.</li>
+			</ul>
+		]]>
+    </string>
+    <string name="help_text_poll_details">
+<![CDATA[
+			<b>Ici vous pouvez définir les propriétés du scrutin.</b>
+			<ul>
+			<li><b>Question:</b> la question à laquelle les votants devront répondre.</li>
+			<li><b>Options:</b> la liste de réponse dont une devra être choisie par chaque votant. Vous pouvez ajouter une option en indiquant un texte au bas de l\'écran et en le validant avec le bouton +. Vous pouvez supprimer une option en cliquant sur l\'icône correspondante.</li>
+			<li><b>Autorise le vote blanc:</b> cette case à cocher ajoute ou supprime l\'option représentant le vote blanc.</li>
+			</ul>
+			Lorsque vous avez terminé de configurer le scrutin, vous pouvez le démarrer à l\'aide du bouton \"Démarrer le scrutin\".<br/>
+			En cliquant sur le bouton Retour, vous pourrez sauvegarder le scrutin.<br/>
+			Si vous le sauvegarder, vous pourrez y accéder plus tard pour le modifier ou le démarrer.
+		]]>
+    </string>
+    <string name="help_text_network_config">
+<![CDATA[
+			<b>Ici vous pouvez configurer l\'accès à la session de vote.</b>
+			<br/><br/>
+			Premièrement, vous devez indiquer votre identification (par exemple votre nom). Ensuite, vous devez choisir quel réseau Wi-Fi vous désirez utiliser. Enfin, vous devez entrer les données de connexion du groupe.
+			<ul>
+				<li><b>Si vous être administrateur du scrutin</b>, vous devez uniquement choisir le réseau Wi-Fi à utiliser. 
+				Pour cela, vous avez deux possibilités. Soit vous utilisez le réseau auquel vous être actuellement connecté (boutton \"Utiliser le réseau x\"), 
+				soit vous choisissez les configurations avancées pour choisir un autre réseau. 
+				Vous avez également la possibilité d\'utiliser le point d\'accès de votre appareil. Cette solution ne supporte cependant que peu de participants.</li>
+				<li><b>Si vous désirer rejoindre une session de vote existante</b>, vous avez 4 possibilités:</li>
+				<ul>
+				<li><b>Scanner un QR-code:</b> avec cette option, vous pouvez scanner le QR-code afficher sur l\'écran de l\'administrateur du scrutin. La connexion sera alors réalisée automatiquement.</li>
+				<li><b>Lire un tag NFC:</b> si votre appareil supporte la technologie NFC, vous pouvez lire les données sauvées sur un tag NFC. La connexion sera alors réalisée automatiquement.</li>
+				<li><b>Utiliser le réseau x:</b> cette option permet d\'utiliser le réseau auquel vous êtes actuellement connecté. Vous êtes alors invité a indiquer le mot de passe défini par l\'administrateur pour le groupe.
+				Si aucun groupe n\'est affiché dans la liste déroulante et que l\'administrateur a déjà créé le groupe, vérifier que le réseau auquel vous être connecté supporte l\'échange de message multicast. Le cas échéant, changez de réseau.</li>
+				<li><b>Configuration avancée:</b> cette option vous permet de choisir un autre réseau. Vous serez invité à indiquer le mot de passe du groupe défini par l\'utilisateur.</li>	
+				</ul>
+			</ul>
+			
+		]]>
+    </string>
+    <string name="help_text_network_info">
+<![CDATA[
+			<b>Ici, des informations à propos de la session de vote sont affichées.</b>
+			<ul>
+				<li><b>Nom du réseau:</b> le réseau Wi-Fi utilisé pour la session de vote.</li>
+				<li><b>Numéro du groupe:</b> le nom du groupe.</li>
+				<li><b>Mot de passe du groupe:</b> le mot de passe qui doit être connu par tous les membres du groupe.</li>
+				<li><b>QR-code:</b> le QR-code qui peut être scanné par les personnes désirant rejoindre le groupe.</li>
+				<li><b>Ecrire un tag NFC:</b> si votre appareil supporte la technologie NFC, ce bouton sera affiché. Il permet d\'écrire les informations du groupe sur un tag NFC qui pourra être lu par les personnes désirant rejoindre le groupe.</li>
+				<li><b>Votre identification:</b> le nom vous identifiant au sein du groupe.</li>
+			</ul>
+		]]>
+    </string>
+    <string name="help_text_electorate_admin">
+<![CDATA[
+			Ici, l\'administrateur du vote, <b>peut choisir les personnes qui auront le droit de voter</b>.  
+			<br/><br/>
+			La liste affiche les personnes connectées à la session de vote. En utilisant les cases à cocher, vous pouvez inclure ou exclure des personnes de l\'électorat.
+		]]>
+    </string>
+    <string name="help_text_review_admin">
+<![CDATA[
+			<b>Ici, l\'administrateur du vote doit attendre jusqu\'à ce que chaque votant a accepté le contenu du scrutin et l\'électorat.</b>
+			<br/>Une fois que chaque participant a accepté le contenu du scrutin et l\'électorat, vous pouvez démarrer la pédriod de vote.
+			<br/><br/>Si un participant n\'accepte pas le contenu du vote ou l\'électorat, vous devez retourner à l\'écran de configuration du scrutin et le modifier.<br/>
+			Si un participant refuse d\'accepter le contenu juste pour bloquer le vote, vous pouvez l\'exclure de l\'électorat en retournant à l\'écran précédent.
+		]]>
+    </string>
+    <string name="help_text_electorate_voter">
+<![CDATA[
+			<b>Ici, vous pouvez voir quels participants sont ajoutés à l\'électortat par l\'administrateur du scrutin.</b>
+			Un fois que l\'administrateur a choisit les participants qu\'il désire inclure dans l\'électorat, vous êtes redirigés vers l\'écran suivant. 
+		]]>
+    </string>
+    <string name="help_text_review_voter">
+<![CDATA[
+			<b>Ici, vous devez vérifier si le contenu du vote est correct.</b> Si c\'est le cas, vous pouvez l\'accepter en cliquant la case à cocher correspondant à votre nom dans la liste des participants.
+			<br/><br/>
+			Vous devez vérifier les choses suivantes:
+			<ul>
+				<li>La question est-elle correcte?</li>
+				<li>Est-ce que la liste d\'options contient toutes les options?</li>
+				<li>Est-ce que toutes les personnes ayant le droit de vote apparaissent dans l\'électorat?</li>
+				<li>Est-ce qu\'un personne qui n\'aurait pas le droit de vote apparaît dans l\'électorat?</li>
+				<li>Comparer les caractères apparaissant sous votre nom sur votre écran, avec ceux apparaissant sous votre nom sur l\'écran de votre voisin.</li>
+			</ul>
+			Si une de ces condition n\'est pas remplies, vous ne devriez pas accepté le contenu du vote et vous devriez demander à l\'administrateur de le modifier. Si les caractères sous votre nom sont différents chez un autre votant, vous êtse victime d\'une attaque d\'impersonification. Vous devrez demander à l\'administrateur de créer une nouvelle session de vote.
+		]]>
+    </string>
+    <string name="help_text_vote">
+<![CDATA[
+			<b>Ici, vous pouvez choisir l\'option pour laquelle vous désirez voter</b> Une confirmation vous sera demandée une fois votre choix effectué.
+		]]>
+    </string>
+    <string name="help_text_wait_admin">
+<![CDATA[
+			<b>Cet écran affiche la progession du scrutin.</b> Dans la liste, vous pouvez voir quels participants n\'ont pas encore voté.
+			 Si quelqu\'un ne vote pas (en raison d\'un problème technique, pour boycotter ou pour toute autre raison), l\'administrateur du vote peut décider de terminer la période de vote en pressant sur le bouton \"Terminer le vote\"
+			 
+			<br/><br/>Une fois que tous les participants ont voté, vous allez être redirigé vers l\'écran de résultat.
+		]]>
+    </string>
+    <string name="help_text_wait_voter">
+<![CDATA[
+			<b>Cet écran affiche la progession du scrutin</b> Dans la liste, vous pouvez voir quels participants n\'ont pas encore voté.
+			<br/><br/>Une fois que tous les participants ont voté, vous allez être redirigé vers l\'écran de résultat.
+		]]>
+    </string>
+    <string name="help_text_display_results">
+<![CDATA[
+			<b>Ici, le résultat du scrutin est affiché.</b>
+			<br/><br/>
+			Si vous étiez l\'administrateur du scrutin, et que le scrutin vient juste de se terminer, vous avez la possibilité de répéter le scrutin avec le bouton \"Répéter le scrutin\".
+			<br/><br/>
+			Si vous accéder à cet écran au travers des archives, vous pouvez copier le scrutin pour le répéter plus tard.
+		]]>
+    </string>
+    <string name="help_text_archive">
+<![CDATA[
+			<b>Cet écran affiche la liste de tous les scrutins auxquels vous avez participé.</b>
+			<br/><br/>
+			Lorsque vous choisissez un scrutin dans la liste, son résultat est affiché.
+		]]>
+    </string>
+
+</resources>
