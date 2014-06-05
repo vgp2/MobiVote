@@ -137,11 +137,7 @@ public class CommitmentRoundAction extends AbstractAction {
 						for(Participant p:poll.getParticipants().values()){
 							if(!messagesReceived.containsKey(p.getUniqueId()) && !poll.getCompletelyExcludedParticipants().containsKey(p.getUniqueId())){
 								poll.getExcludedParticipants().put(p.getUniqueId(), p);
-								//notify exclusion
-								LocalBroadcastManager.getInstance(AndroidApplication.getInstance())
-								.sendBroadcast(new Intent(BroadcastIntentTypes.proofVerificationFailed)
-									.putExtra("type", 2)
-									.putExtra("participant", p.getIdentification()));
+								
 								Log.w(TAG, "Excluding "+p.getIdentification()+"("+p.getUniqueId()+") at end of voting period");
 							}
 						}

@@ -234,7 +234,7 @@ public class TallyingAction extends AbstractAction {
 			i++;
 		}
 		rc.startComputation(poll.getNumberOfParticipants()-poll.getExcludedParticipants().size()-poll.getCompletelyExcludedParticipants().size(),
-				poll.getOptions().size(), possiblePlainTexts, poll.getGenerator(), poll.getZ_q());
+				poll.getOptions().size(), possiblePlainTexts, poll.getGenerator(), poll.getZ_q(), poll.getOptions());
 	}
 
 	/**

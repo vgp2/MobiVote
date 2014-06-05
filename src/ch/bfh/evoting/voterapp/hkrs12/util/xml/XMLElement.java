@@ -44,6 +44,11 @@ package ch.bfh.evoting.voterapp.hkrs12.util.xml;
 
 import org.simpleframework.xml.Element;
 
+import android.util.Base64;
+import ch.bfh.unicrypt.helper.array.ByteArray;
+import ch.bfh.unicrypt.helper.bytetree.ByteTree;
+import ch.bfh.unicrypt.math.algebra.general.interfaces.Group;
+
 
 public class XMLElement {
 
@@ -52,14 +57,11 @@ public class XMLElement {
 	
 	public XMLElement(){}
 	
-	public XMLElement(String value) {
-		this.value = value;
+	public XMLElement(ch.bfh.unicrypt.math.algebra.general.interfaces.Element element) {
+		this.value = Base64.encodeToString(element.getByteTree().getByteArray().getAll(), Base64.DEFAULT);
 	}
 	
-	public String getValue() {
-		return value;
-	}
-	public void setValue(String value) {
-		this.value = value;
+	public ch.bfh.unicrypt.math.algebra.general.interfaces.Element getValue(Group group) {
+		return group.getElementFrom(ByteTree.getInstanceFrom(ByteArray.getInstance(Base64.decode(value, Base64.DEFAULT))));
 	}
 }

@@ -59,12 +59,12 @@ public class XMLPoll {
 	@Element
 	private String p;
 	@Element
-	private XMLGqElement generator;
+	private XMLElement generator;
 	
 	public XMLPoll(){}
 	
 	public XMLPoll(String question, List<XMLOption> options,
-			List<XMLParticipant> participants, String p, XMLGqElement generator) {
+			List<XMLParticipant> participants, String p, XMLElement generator) {
 		super();
 		this.question = question;
 		this.options = options;
@@ -97,10 +97,10 @@ public class XMLPoll {
 	public void setP(String p) {
 		this.p = p;
 	}
-	public XMLGqElement getGenerator() {
+	public XMLElement getGenerator() {
 		return generator;
 	}
-	public void setGenerator(XMLGqElement generator) {
+	public void setGenerator(XMLElement generator) {
 		this.generator = generator;
 	}	
 	

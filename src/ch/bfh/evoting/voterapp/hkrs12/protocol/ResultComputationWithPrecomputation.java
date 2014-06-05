@@ -44,6 +44,8 @@ package ch.bfh.evoting.voterapp.hkrs12.protocol;
 
 import java.io.IOException;
 import java.math.BigInteger;
+import java.util.Arrays;
+import java.util.List;
 import java.util.Map;
 import java.util.concurrent.Callable;
 import java.util.concurrent.ConcurrentHashMap;
@@ -52,8 +54,8 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
 
 import android.util.Log;
-
-
+import ch.bfh.evoting.voterapp.hkrs12.entities.Option;
+import ch.bfh.evoting.voterapp.hkrs12.protocol.hkrs12.ProtocolOption;
 import ch.bfh.unicrypt.math.algebra.dualistic.classes.ZMod;
 import ch.bfh.unicrypt.math.algebra.general.interfaces.Element;
 
@@ -82,12 +84,12 @@ public class ResultComputationWithPrecomputation {
 	 * @param generator the generator used as base of the discrete logarithm
 	 * @param Z_q the Zq group in which the number of votes must be represented
 	 */
-	public void startComputation(final int maxVotes, final int nbrOptions, final Element[] possiblePlainTexts, final Element generator, final ZMod Z_q){
+	public void startComputation(final int maxVotes, final int nbrOptions, final Element[] possiblePlainTexts, final Element generator, final ZMod Z_q, final List<Option> options){
 		numberOfCombination=0;
 		t = new Thread(){
 
 			public void run() {
-				doPrecomputations(generator, maxVotes, nbrOptions);
+				doPrecomputations(generator, maxVotes, nbrOptions, options);
 				Log.d(TAG,"Starting computing possible results");
 				long time0 = System.currentTimeMillis();
 				computePossibleResults(maxVotes,nbrOptions);
@@ -118,7 +120,7 @@ public class ResultComputationWithPrecomputation {
 	    return pool.submit(new Callable<int[]>() {
 	        @Override
 	        public int[] call() throws Exception {
-	        	Log.d(TAG,"Setting searched discrete logarithm");
+	        	Log.d(TAG,"Setting searched discrete logarithm" + searchedResult);
 	        	ResultComputationWithPrecomputation.this.searchedResult = searchedResult;
 	        	while(true){
 	        		int[] result = resultMap.get(searchedResult);
@@ -146,18 +148,9 @@ public class ResultComputationWithPrecomputation {
 	 * @param numberOfVotes number of votes submitted
 	 * @param numberOfOptions number of options in the poll
 	 */
-	private void doPrecomputations(Element generator, int numberOfVotes, int numberOfOptions){
+	private void doPrecomputations(Element generator, int numberOfVotes, int numberOfOptions, List<Option> options){
 		//table containing the precomputations
 		precomputations = new Element[numberOfOptions][numberOfVotes+1];
-		
-		//k is the refenrence to the column that must be squared in ordre to obtain the first value of next line
-		int k = 0;
-		for(int i=(int)Math.ceil(Math.log(numberOfVotes)/Math.log(2));i>=0;i--){
-			k = (int)Math.pow(2, i);
-			if(k<=numberOfVotes){
-				break;
-			}
-		}
 		
 		for(int i=0; i<numberOfOptions; i++){
 			for(int j=0; j<=numberOfVotes; j++){
@@ -170,7 +163,7 @@ public class ResultComputationWithPrecomputation {
 						precomputations[i][j] = generator.selfApply(j);
 					} else if(j==1) {
 						//first column of the new line
-						precomputations[i][j] = precomputations[i-1][k].selfApply(BigInteger.valueOf(2));
+						precomputations[i][j] = generator.selfApply(((ProtocolOption)options.get(i)).getRepresentation());
 					} else {
 						//other columns
 						precomputations[i][j] = precomputations[i][j-1].apply(precomputations[i][1]);

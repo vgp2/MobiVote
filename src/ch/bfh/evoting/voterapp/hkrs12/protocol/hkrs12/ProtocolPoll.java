@@ -70,8 +70,6 @@ import ch.bfh.unicrypt.math.algebra.multiplicative.classes.GStarModElement;
 import ch.bfh.unicrypt.math.algebra.multiplicative.classes.GStarModSafePrime;
 import ch.bfh.unicrypt.random.classes.PseudoRandomOracle;
 import ch.bfh.unicrypt.random.classes.ReferenceRandomByteSequence;
-//import ch.bfh.unicrypt.math.helper.ByteArray;
-//import ch.bfh.unicrypt.math.helper.factorization.SafePrime;
 
 public class ProtocolPoll extends Poll {
 
@@ -82,6 +80,7 @@ public class ProtocolPoll extends Poll {
 
 	//when updating this, do not forget to also update serializedSafePrimeofP variable
 	private static BigInteger p = new BigInteger("24421817481307177449647246484681681783337829412862177682538435312071281569646025606745584903210775224457523457768723824442724616998787110952108654428565400454402598245210227144929556256697593550903247924055714937916514526166092438066936693296218391429342957961400667273342778842895486447440287639065428393782477303395870298962805975752198304889507138990179204870133839847367098792875574662446712567387387134946911523722735147628746206081844500879809860996360597720571611720620174658556850893276934140542331691801045622505813030592119908356317756153773900818965668280464355085745552657819811997912683349698802670648319"); 
+//	private static BigInteger p = new BigInteger("1187");
 	//this correspond to the SafePrime object containing p in a serialized form
 	private String serializedSafePrimeofP = "rO0ABXNyAC5jaC5iZmgudW5pY3J5cHQuaGVscGVyLmZhY3Rvcml6YXRpb24uU2FmZVByaW1lzEYaSXqxXPACAAB4cgAqY2guYmZoLnVuaWNyeXB0LmhlbHBlci5mYWN0b3JpemF0aW9uLlByaW1lC09p/ri/FwsCAAB4cgA5Y2guYmZoLnVuaWNyeXB0LmhlbHBlci5mYWN0b3JpemF0aW9uLlNwZWNpYWxGYWN0b3JpemF0aW9uSQgdmBj1KJgCAAB4cgAyY2guYmZoLnVuaWNyeXB0LmhlbHBlci5mYWN0b3JpemF0aW9uLkZhY3Rvcml6YXRpb252Jhq+x1QMUQIAA1sACWV4cG9uZW50c3QAAltJWwAMcHJpbWVGYWN0b3JzdAAXW0xqYXZhL21hdGgvQmlnSW50ZWdlcjtMAAV2YWx1ZXQAFkxqYXZhL21hdGgvQmlnSW50ZWdlcjt4cgAfY2guYmZoLnVuaWNyeXB0LmhlbHBlci5VbmlDcnlwdAAAAAAAAAABAgAAeHB1cgACW0lNumAmduqypQIAAHhwAAAAAQAAAAF1cgAXW0xqYXZhLm1hdGguQmlnSW50ZWdlcjsOfNtG4DpgxgIAAHhwAAAAAXNyABRqYXZhLm1hdGguQmlnSW50ZWdlcoz8nx+pO/sdAwACSQAGc2lnbnVtWwAJbWFnbml0dWRldAACW0J4cgAQamF2YS5sYW5nLk51bWJlcoaslR0LlOCLAgAAeHAAAAABdXIAAltCrPMX+AYIVOACAAB4cAAAAQDBdUNe64p6BtlhSfHTD1muHnDwQA2tKJB9kfcFI1rmamLF0l2miBsC1ZyYJy3EmAOUn1kh+YHxAKgYd7oh7sTxOKHxB/IKMHGu4e67b1LuvK41yZIf6AdgNdBDWGuCfauLyLk0pSg3rXrufJBfxVKrRw5qnGpfniKbnKqFK8EDDZfd9Gg5xW56XahXXz0yN2+EMgz/7WDiPDJX1TDIDWz9tfie5J55o03Ico8okv3n3xegtorSxQjkABXMXsg5nh1XSa9YYn5hJtzr4Npi8ZFS8eFVYRhAb3xoA+nZHPve+NUUplFq4rFWcQa8FYdBTEuJ/OIR/1bHVq37T+m+XDv/eHEAfgAQ";
 	
@@ -106,7 +105,8 @@ public class ProtocolPoll extends Poll {
 	 */
 	public void generateGenerator(){
 		
-		//TODO since SHA256 of OpenSSL is not serializable this cannot be used anymore
+		//Since SHA256 MessageDigest of OpenSSL is not serializable this cannot be used anymore
+		//This is however already covered with the otherInputs of the proofs
 		//computes a commitment to the text of the poll and use this commitment as generator
 //		String texts = this.getQuestion();
 //		Element[] representations = new Element[this.getOptions().size()];
@@ -126,12 +126,8 @@ public class ProtocolPoll extends Poll {
 //		buffer.put(representationsElement.getAll());
 //		buffer.flip(); 
 //		
-//		TODO MessageDigest of Android OpenSSL is not Serializable !!!
 //		ReferenceRandomByteSequence rrs = PseudoRandomOracle.getInstance().getReferenceRandomByteSequence(ByteArray.getInstance(buffer.array()));
-//		generator = G_q.getElementFrom(G_q.getIndependentGenerator(1, rrs).getByteTree());
-//		generator = G_q.getElement((G_q.getIndependentGenerator(1, rrs).getBigInteger()));
 		generator = G_q.getDefaultGenerator();
-//		rrs = null;
 	}
 
 	/**

@@ -70,15 +70,10 @@ import ch.bfh.evoting.voterapp.hkrs12.protocol.hkrs12.ProtocolParticipant;
 import ch.bfh.evoting.voterapp.hkrs12.protocol.hkrs12.ProtocolPoll;
 import ch.bfh.evoting.voterapp.hkrs12.protocol.hkrs12.statemachine.StateMachineManager;
 import ch.bfh.evoting.voterapp.hkrs12.util.BroadcastIntentTypes;
-import ch.bfh.evoting.voterapp.hkrs12.util.xml.XMLEqualityProof;
-import ch.bfh.evoting.voterapp.hkrs12.util.xml.XMLGqElement;
-import ch.bfh.evoting.voterapp.hkrs12.util.xml.XMLGqPair;
-import ch.bfh.evoting.voterapp.hkrs12.util.xml.XMLKnowledgeProof;
+import ch.bfh.evoting.voterapp.hkrs12.util.xml.XMLElement;
 import ch.bfh.evoting.voterapp.hkrs12.util.xml.XMLOption;
 import ch.bfh.evoting.voterapp.hkrs12.util.xml.XMLParticipant;
 import ch.bfh.evoting.voterapp.hkrs12.util.xml.XMLPoll;
-import ch.bfh.evoting.voterapp.hkrs12.util.xml.XMLValidityProof;
-import ch.bfh.evoting.voterapp.hkrs12.util.xml.XMLZqElement;
 import ch.bfh.unicrypt.math.algebra.general.classes.Tuple;
 import ch.bfh.unicrypt.math.algebra.general.interfaces.Element;
 
@@ -290,6 +285,7 @@ public class HKRS12ProtocolInterface extends ProtocolInterface {
 
 			
 				//computes a generator depending on the text of the poll
+				//not used anymore: this functionality is implicitly done with the other inputs of the proofs
 //				String texts = poll.getQuestion();
 //				Element[] representations = new Element[poll.getOptions().size()];
 //				int i=0;
@@ -394,7 +390,7 @@ public class HKRS12ProtocolInterface extends ProtocolInterface {
 		List<XMLOption> newOptions = new ArrayList<XMLOption>();
 		for(Option op : pp.getOptions()){
 			ProtocolOption pop = (ProtocolOption)op;
-			XMLOption xop = new XMLOption(pop.getText(), pop.getVotes(), new XMLZqElement(pop.getRepresentation().getBigInteger().toString(10)));
+			XMLOption xop = new XMLOption(pop.getText(), pop.getVotes(), new XMLElement(pop.getRepresentation()));
 			newOptions.add(xop);
 		}
 
@@ -407,13 +403,10 @@ public class HKRS12ProtocolInterface extends ProtocolInterface {
 			xpp.setUniqueId(pPart.getUniqueId());
 			xpp.setProtocolParticipantIndex(pPart.getProtocolParticipantIndex());
 			if(pPart.getAi()!=null)
-				xpp.setAi(new XMLGqElement(pPart.getAi().getBigInteger().toString(10)));
+				xpp.setAi(new XMLElement(pPart.getAi()));
 			if(pPart.getProofForXi()!=null){
 				Tuple proof = (Tuple)pPart.getProofForXi();
-				XMLGqElement value11 = new XMLGqElement(proof.getAt(0).getBigInteger().toString(10));
-				XMLZqElement value12 = new XMLZqElement(proof.getAt(1).getBigInteger().toString(10));
-				XMLZqElement value13 = new XMLZqElement(proof.getAt(2).getBigInteger().toString(10));	
-				xpp.setProofForXi(new XMLKnowledgeProof(value11, value12, value13));
+				xpp.setProofForXi(new XMLElement(proof));
 			}
 			if(pPart.getBi()!=null){
 				//Does only include Hi if Bi is not null, because when Bi is null, all other participant
@@ -421,50 +414,25 @@ public class HKRS12ProtocolInterface extends ProtocolInterface {
 				//if pPart is me, and I didn't vote, without this check, I would include my Hi, but
 				//other participant don't. So I don't have to do it, in order to get the same XML file
 				//as the others
-				xpp.setHi(new XMLGqElement(pPart.getHi().getBigInteger().toString(10)));
+				xpp.setHi(new XMLElement(pPart.getHi()));
 			}
 			if(pPart.getBi()!=null)
-				xpp.setBi(new XMLGqElement(pPart.getBi().getBigInteger().toString(10)));
+				xpp.setBi(new XMLElement(pPart.getBi()));
 			if(pPart.getProofValidVote()!=null){
-				Tuple proof = (Tuple)pPart.getProofValidVote();
-				Tuple subPart11 = (Tuple)proof.getAt(0);//list of Gq pairs
-				Tuple subPart12 = (Tuple)proof.getAt(1);//list ZModElements
-				Tuple subPart13 = (Tuple)proof.getAt(2);//list ZModElements
-				List<XMLGqPair> value11 = new ArrayList<XMLGqPair>();
-				for(Element e : subPart11.getAll()){
-					Tuple tuple = (Tuple)e;
-					XMLGqPair pair = new XMLGqPair(new XMLGqElement(tuple.getAt(0).getBigInteger().toString(10)),
-							new XMLGqElement(tuple.getAt(1).getBigInteger().toString(10)));
-					value11.add(pair);
-				}
-				List<XMLZqElement> value12 = new ArrayList<XMLZqElement>();
-				for(Element e : subPart12.getAll()){
-					value12.add(new XMLZqElement(e.getBigInteger().toString(10)));
-				}
-				List<XMLZqElement> value13 = new ArrayList<XMLZqElement>();
-				for(Element e : subPart13.getAll()){
-					value13.add(new XMLZqElement(e.getBigInteger().toString(10)));
-				}
-
-				XMLValidityProof xvp = new XMLValidityProof(value11, value12, value13);
-				xpp.setProofValidVote(xvp);
+				xpp.setProofValidVote(new XMLElement(pPart.getProofValidVote()));
 			}
 			if(pPart.getHiHat()!=null)
-				xpp.setHiHat(new XMLGqElement(pPart.getHiHat().getBigInteger().toString(10)));
+				xpp.setHiHat(new XMLElement(pPart.getHiHat()));
 			if(pPart.getHiHatPowXi()!=null)
-				xpp.setHiHatPowXi(new XMLGqElement(pPart.getHiHatPowXi().getBigInteger().toString(10)));
+				xpp.setHiHatPowXi(new XMLElement(pPart.getHiHatPowXi()));
 			if(pPart.getProofForHiHat()!=null){
 				Tuple proof = (Tuple)pPart.getProofForHiHat();
-				XMLGqElement value111 = new XMLGqElement(((Tuple)proof.getAt(0)).getAt(0).getBigInteger().toString(10));
-				XMLGqElement value112 = new XMLGqElement(((Tuple)proof.getAt(0)).getAt(1).getBigInteger().toString(10));
-				XMLZqElement value12 = new XMLZqElement(proof.getAt(1).getBigInteger().toString(10));	
-				XMLZqElement value13 = new XMLZqElement(proof.getAt(2).getBigInteger().toString(10));	
-				xpp.setProofForHiHat(new XMLEqualityProof(value111, value112, value12, value13));
+				xpp.setProofForHiHat(new XMLElement(proof));
 			}
 			newParticipant.add(xpp);
 		}
 
-		XMLPoll xmlPoll = new XMLPoll(pp.getQuestion(), newOptions, newParticipant, pp.getP().toString(10), new XMLGqElement(pp.getGenerator().getBigInteger().toString(10)));
+		XMLPoll xmlPoll = new XMLPoll(pp.getQuestion(), newOptions, newParticipant, pp.getP().toString(10), new XMLElement(pp.getGenerator()));
 		Serializer serializer = new Persister();
 		try {
 			serializer.write(xmlPoll, file);
