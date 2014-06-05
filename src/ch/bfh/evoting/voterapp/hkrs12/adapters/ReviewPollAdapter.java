@@ -66,7 +66,7 @@ import ch.bfh.evoting.voterapp.hkrs12.util.Separator;
 /**
  * List adapter showing a list of the options
  * 
- * @author von Bergen Phil��mon
+ * @author von Bergen Philémon
  */
 public class ReviewPollAdapter extends BaseAdapter {
 

@@ -8,20 +8,23 @@ protocol specially designed for the mentioned purpose. No central
 infrastructure is required, thus only Android devices are needed in
 order to run an election.
 
-An user manual of the application can be found in the appendix of following
-document:
-http://e-voting.bfh.ch/app/download/5999765861/vonbergen14.pdf?t=
-1392211737
+An user manual of the application can be found in the appendix of
+following document:
+http://e-voting.bfh.ch/app/download/5999765861/vonbergen14.pdf
 
 This repository contains the source code of MobiVote as well as an APK
 (Android executable) which can be found in the root directory of the
 project. The code source in this repository depends on following
-additional repositories: 
-https://github.com/vgp2/AllJoynLib
+additional repositories: https://github.com/vgp2/AllJoynLib
 https://github.com/vgp2/ZXing
+
+A verifying software has also be implemented allowing to check
+afterwards if an election ran correctly. It is written with the same
+code base as MobiVote. It is available here:
+https://github.com/vgp2/MobiVoteVerifier
 
 This program is distributed in the hope that it will be useful, but
 WITHOUT ANY WARRANTY; without even the implied warranty of
 MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
-  
+
 For licensing, see LICENSE.txt
